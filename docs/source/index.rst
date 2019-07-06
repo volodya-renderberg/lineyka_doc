@@ -14,6 +14,9 @@ Contents:
    studio
    database
    artist
+   workroom
+   project
+   set_of_tasks
 
 
 Indices and tables

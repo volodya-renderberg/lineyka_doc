@@ -52,6 +52,78 @@
             
   <div class="section" id="class-database">
 <h1>Class Database<a class="headerlink" href="#class-database" title="Permalink to this headline">¶</a></h1>
+<p><strong>database()</strong></p>
+<dl class="function">
+<dt>
+<code class="descname">get(level, read_ob, table_name, com, table_root=False) - чтение таблицы базы данных.</code></dt>
+<dd></dd></dl>
+
+<ul class="simple">
+<li><strong>level</strong> (<em>str</em>) - &#8216;studio&#8217; or &#8216;project&#8217;</li>
+<li><strong>read_ob</strong> (<em>studio/project</em>) - экземпляр класса студии или проекта</li>
+<li><strong>com</strong> (<em>str</em>) - команда для базы данных mysql</li>
+<li><strong>table_root</strong> (<em>str</em>) - для тех случаев когда имя файла ДБ(sqlite3) не соответствует имени таблицы, если есть table_root - имя файла ДБ будет определяться по нему table_root - * может быть как именем таблицы - например: &#8216;assets&#8217;, так и именем файла - .assets.db</li>
+<li><strong>return</strong> - (True, [строки таблицы базы данных - словари]) или (False, comment)</li>
+</ul>
+<p><strong>set_db</strong>(<em>level, read_ob, table_name, com, data_com=False, table_root=False</em>) - внесение изменений в таблицу базы данных.</p>
+<ul class="simple">
+<li><strong>level</strong> (<em>str</em>)- &#8216;studio&#8217; or &#8216;project&#8217;</li>
+<li><strong>read_ob</strong> (<em>studio/project</em>) - экземпляр класса студии или проекта</li>
+<li><strong>com</strong> (<em>str</em>)- команда для базы данных mysql</li>
+<li><strong>data_com</strong> (<em>tuple</em>)- кортеж значений для com</li>
+<li><strong>table_root</strong> (<em>str</em>)- для тех случаев когда имя файла ДБ(sqlite3) не соответствует имени таблицы, если есть table_root - имя файла ДБ будет определяться по нему. table_root - может быть как именем таблицы - например: &#8216;assets&#8217;, так и именем файла - .assets.db</li>
+<li><strong>return</strong> - (True, &#8216;Ok!&#8217;) или (False, comment)</li>
+</ul>
+<p><strong>create_table</strong>(<em>level, read_ob, table_name, keys, table_root = False</em>) - создание таблицы при её отсутствии.</p>
+<ul class="simple">
+<li><strong>level</strong> (<em>str</em>)- &#8216;studio&#8217; or &#8216;project&#8217;</li>
+<li><strong>read_ob</strong> (<em>studio/project</em>) - экземпляр класса студии или проекта</li>
+<li><strong>table_name</strong> (<em>str</em>)- имя таблицы</li>
+<li><strong>keys</strong> (<em>dict</em>)- словарь ключей данного типа таблицы, например tasks_keys</li>
+<li><strong>table_root</strong> (<em>str</em>)- для тех случаев когда имя файла ДБ(sqlite3) не соответствует имени таблицы, если есть table_root - имя файла ДБ будет определяться по нему table_root - может быть как именем таблицы - например: &#8216;assets&#8217;, так и именем файла - .assets.db</li>
+<li><strong>return</strong> - (True, &#8216;Ok!&#8217;) или (False, comment)</li>
+</ul>
+<p><strong>insert</strong>(<em>level, read_ob, table_name, keys, write_data, table_root=False</em>) - запись строк в таблицу, перед записью запускает процедуру создания таблицы - create_table.</p>
+<ul class="simple">
+<li><strong>level</strong> (<em>str</em>)- &#8216;studio&#8217; or &#8216;project&#8217;</li>
+<li><strong>read_ob</strong> (<em>studio/project</em>) - экземпляр класса студии или проекта</li>
+<li><strong>table_name</strong> (<em>str</em>)- имя таблицы</li>
+<li><strong>keys</strong> (<em>dict</em>)- словарь ключей данного типа таблицы, например tasks_keys</li>
+<li><strong>write_data</strong> (<em>dict</em>)- словарь по ключам keys, также может быть списком словарей, для записи нескольких строк</li>
+<li><strong>table_root</strong> (<em>str</em>)- для тех случаев когда имя файла ДБ(sqlite3) не соответствует имени таблицы, если есть table_root - имя файла ДБ будет определяться по нему table_root - может быть как именем таблицы - например: &#8216;assets&#8217;, так и именем файла - .assets.db</li>
+<li><strong>return</strong> - (True, &#8216;Ok!&#8217;) или (False, comment)</li>
+</ul>
+<p><strong>read</strong>(<em>level, read_ob, table_name, keys, columns = False, where=False, table_root=False</em>) - чтение таблицы бд.</p>
+<ul class="simple">
+<li><strong>level</strong> (<em>str</em>)- &#8216;studio&#8217; or &#8216;project&#8217;</li>
+<li><strong>read_ob</strong> (<em>studio/project</em>) - экземпляр класса студии или проекта</li>
+<li><strong>table_name</strong> (<em>str</em>)- имя таблицы</li>
+<li><strong>keys</strong> (<em>dict</em>)- словарь ключей данного типа таблицы, например tasks_keys</li>
+<li><strong>columns</strong> (<em>dict</em>)- False - означает все столбцы если не False - то список столбцов</li>
+<li><strong>where</strong> (<em>dict</em>)- 1) строка условия, 2) словарь по keys, 3) False - значит выделяется всё</li>
+<li><strong>table_root</strong> (<em>str</em>)- для тех случаев когда имя файла ДБ(sqlite3) не соответствует имени таблицы, если есть table_root - имя файла ДБ будет определяться по нему. table_root - может быть как именем таблицы - например: &#8216;assets&#8217;, так и именем файла - .assets.db</li>
+<li><strong>return</strong> - (True, [строки таблицы базы данных - словари]) или (False, comment)</li>
+</ul>
+<p><strong>update</strong>(<em>level, read_ob, table_name, keys, update_data, where, table_root=False</em>) - внесение изменений в таблицу бд.</p>
+<ul class="simple">
+<li><strong>level</strong> (<em>str</em>)- &#8216;studio&#8217; or &#8216;project&#8217;</li>
+<li><strong>read_ob</strong> (<em>studio/project</em>) - экземпляр класса студии или проекта</li>
+<li><strong>table_name</strong> (<em>str</em>)- имя таблицы</li>
+<li><strong>keys</strong> (<em>dict</em>)- словарь ключей данного типа таблицы, например tasks_keys</li>
+<li><strong>update_data</strong> (<em>dict</em>)- словарь по ключам из keys</li>
+<li><strong>where</strong> (<em>dict</em>)- словарь по ключам, так как значения маскируются под &#8221;?&#8221; не может быть None или False</li>
+<li><strong>table_root</strong> (<em>str</em>)- для тех случаев когда имя файла ДБ(sqlite3) не соответствует имени таблицы, если есть table_root - имя файла ДБ будет определяться по нему. table_root - может быть как именем таблицы - например: &#8216;assets&#8217;, так и именем файла - .assets.db</li>
+<li><strong>return</strong> - (True, &#8216;Ok!&#8217;) или (False, comment)</li>
+</ul>
+<p><strong>delete</strong>(<em>level, read_ob, table_name, where, table_root=False</em>) - удаление строкит из таблицы БД.</p>
+<ul class="simple">
+<li><strong>level</strong> (<em>str</em>)- &#8216;studio&#8217; or &#8216;project&#8217;</li>
+<li><strong>read_ob</strong> (<em>studio/project</em>) - экземпляр класса студии или проекта</li>
+<li><strong>table_name</strong> (<em>str</em>)- имя таблицы</li>
+<li><strong>where</strong> (<em>dict</em>)- словарь по ключам, так как значения маскируются под &#8221;?&#8221; не может быть None или False</li>
+<li><strong>table_root</strong> (<em>str</em>)- для тех случаев когда имя файла ДБ(sqlite3) не соответствует имени таблицы, если есть table_root - имя файла ДБ будет определяться по нему. table_root - может быть как именем таблицы - например: &#8216;assets&#8217;, так и именем файла - .assets.db</li>
+<li><strong>return</strong> - (True, &#8216;Ok!&#8217;) или (False, comment)</li>
+</ul>
 </div>
 
 
