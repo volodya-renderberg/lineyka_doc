@@ -128,7 +128,7 @@ Class Artist
   **Параметры:**
   
   * **project_ob** (*project*) - текущий проект
-  * **status** (*bool/ str*) - если не True, то возвращает только задачи соответствующие данному статусу.
+  * **status** (*bool/ str*) - если не False, то возвращает только задачи соответствующие данному статусу.
   * **return** (*True, {task_name: task_ob, ...}*) или (*False, comment*)
 
 .. note:: add_stat(), read_stat(), edit_stat() - не правились, возможно будут удалены.
