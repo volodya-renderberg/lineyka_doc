@@ -3,9 +3,11 @@ Class Database
 
 **database()**
 
-.. py:function:: get(level, read_ob, table_name, com, table_root=False)
+.. py:function:: get(level, read_ob, table_name, com[, table_root=False])
 
     чтение БД.
+    
+    **Параметры:**
 
     * **level** (*str*) - 'studio' or 'project'
     * **read_ob** (*studio/project*) - экземпляр класса студии или проекта
@@ -13,9 +15,11 @@ Class Database
     * **table_root** (*str*) - для тех случаев когда имя файла ДБ(sqlite3) не соответствует имени таблицы, если есть table_root - имя файла ДБ будет определяться по нему table_root - * может быть как именем таблицы - например: 'assets', так и именем файла - .assets.db
     * **return** - (True, [строки таблицы базы данных - словари]) или (False, comment)
 
-.. py:function:: set_db(level, read_ob, table_name, com, data_com=False, table_root=False)
+.. py:function:: set_db(level, read_ob, table_name, com[, data_com=False, table_root=False])
 
     внесение изменений в таблицу базы данных.
+    
+    **Параметры:**
 
     * **level** (*str*)- 'studio' or 'project'
     * **read_ob** (*studio/project*) - экземпляр класса студии или проекта
@@ -24,9 +28,11 @@ Class Database
     * **table_root** (*str*)- для тех случаев когда имя файла ДБ(sqlite3) не соответствует имени таблицы, если есть table_root - имя файла ДБ будет определяться по нему. table_root - может быть как именем таблицы - например: 'assets', так и именем файла - .assets.db
     * **return** - (True, 'Ok!') или (False, comment)
 
-.. py:function:: create_table(level, read_ob, table_name, keys, table_root = False)
+.. py:function:: create_table(level, read_ob, table_name, keys[, table_root = False])
     
     создание таблицы при её отсутствии.
+    
+    **Параметры:**
 
     * **level** (*str*)- 'studio' or 'project'
     * **read_ob** (*studio/project*) - экземпляр класса студии или проекта
@@ -35,9 +41,11 @@ Class Database
     * **table_root** (*str*)- для тех случаев когда имя файла ДБ(sqlite3) не соответствует имени таблицы, если есть table_root - имя файла ДБ будет определяться по нему table_root - может быть как именем таблицы - например: 'assets', так и именем файла - .assets.db
     * **return** - (True, 'Ok!') или (False, comment)
 
-.. py:function:: insert(level, read_ob, table_name, keys, write_data, table_root=False)
+.. py:function:: insert(level, read_ob, table_name, keys, write_data[, table_root=False])
 
     запись строк в таблицу, перед записью запускает процедуру создания таблицы - create_table.
+    
+    **Параметры:**
 
     * **level** (*str*)- 'studio' or 'project'
     * **read_ob** (*studio/project*) - экземпляр класса студии или проекта
@@ -47,9 +55,11 @@ Class Database
     * **table_root** (*str*)- для тех случаев когда имя файла ДБ(sqlite3) не соответствует имени таблицы, если есть table_root - имя файла ДБ будет определяться по нему table_root - может быть как именем таблицы - например: 'assets', так и именем файла - .assets.db
     * **return** - (True, 'Ok!') или (False, comment)
 
-.. py:function:: read(level, read_ob, table_name, keys, columns = False, where=False, table_root=False)
+.. py:function:: read(level, read_ob, table_name, keys[, columns = False, where=False, table_root=False])
 
     чтение таблицы бд.
+    
+    **Параметры:**
 
     * **level** (*str*)- 'studio' or 'project'
     * **read_ob** (*studio/project*) - экземпляр класса студии или проекта
@@ -60,9 +70,11 @@ Class Database
     * **table_root** (*str*)- для тех случаев когда имя файла ДБ(sqlite3) не соответствует имени таблицы, если есть table_root - имя файла ДБ будет определяться по нему. table_root - может быть как именем таблицы - например: 'assets', так и именем файла - .assets.db
     * **return** - (True, [строки таблицы базы данных - словари]) или (False, comment)
 
-.. py:function:: update(level, read_ob, table_name, keys, update_data, where, table_root=False)
+.. py:function:: update(level, read_ob, table_name, keys, update_data, where[, table_root=False])
 
     внесение изменений в таблицу бд.
+    
+    **Параметры:**
 
     * **level** (*str*)- 'studio' or 'project'
     * **read_ob** (*studio/project*) - экземпляр класса студии или проекта
@@ -73,9 +85,11 @@ Class Database
     * **table_root** (*str*)- для тех случаев когда имя файла ДБ(sqlite3) не соответствует имени таблицы, если есть table_root - имя файла ДБ будет определяться по нему. table_root - может быть как именем таблицы - например: 'assets', так и именем файла - .assets.db
     * **return** - (True, 'Ok!') или (False, comment)
 
-.. py:function:: delete(level, read_ob, table_name, where, table_root=False)
+.. py:function:: delete(level, read_ob, table_name, where[, table_root=False])
 
     удаление строкит из таблицы БД.
+    
+    **Параметры:**
 
     * **level** (*str*)- 'studio' or 'project'
     * **read_ob** (*studio/project*) - экземпляр класса студии или проекта
