@@ -17,6 +17,7 @@ Contents:
    workroom
    project
    set_of_tasks
+   group
 
 
 Indices and tables

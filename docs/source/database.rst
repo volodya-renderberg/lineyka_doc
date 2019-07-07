@@ -1,7 +1,7 @@
 Class Database
 ==============
 
-**database()**
+**database(studio)**
 
 .. py:function:: get(level, read_ob, table_name, com[, table_root=False])
 

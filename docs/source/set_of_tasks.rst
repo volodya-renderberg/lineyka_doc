@@ -1,7 +1,9 @@
 Class Set_of_tasks
 ==================
 
-**set_of_tasks()**
+**set_of_tasks(studio)**
+
+**level** = 'studio'
 
 Редактирование наборов задач.
 

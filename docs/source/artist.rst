@@ -1,7 +1,9 @@
 Class Artist
 ============
 
-**artist()**
+**artist(studio)**
+
+**level** = 'studio'
 
 .. code-block:: python
 

@@ -1,7 +1,9 @@
 Class Project
 =============
 
-**project()**
+**project(studio)**
+
+**level** = 'studio'
 
 .. code-block:: python
 

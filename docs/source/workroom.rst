@@ -1,7 +1,9 @@
 Class Workroom
 ==============
 
-**workroom()**
+**workroom(studio)**
+
+**level** = 'studio'
 
 .. code-block:: python
 
