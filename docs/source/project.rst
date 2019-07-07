@@ -35,7 +35,7 @@ Class Project
   **Параметры:**
   
   * **name** (*str*) - имя проекта
-  * **new** (*bool*) - если new=True - возвращает новый инициализированный объект, если False то инициализирует текущий объект
+  * **new** (*bool*) - если new= *True* - возвращает новый инициализированный объект, если *False* то инициализирует текущий объект
   * **return** - project (*объект*) / (*True,  'Ok!'*) или (*False, comment*)
 
 .. py:function:: init_by_keys(keys[, new=True])
@@ -44,8 +44,8 @@ Class Project
   
   **Параметры:**
   
-  * **keys** (*dict*) - словарь по projects_keys
-  * **new** (*bool*) - если new=True - возвращает новый инициализированный объект, если False то инициализирует текущий объект
+  * **keys** (*dict*) - словарь по *projects_keys*
+  * **new** (*bool*) - если new= *True* - возвращает новый инициализированный объект, если *False* то инициализирует текущий объект
   * **return**  - project (*объект*) / (*True,  'Ok!'*) или (*False, comment*)
 
 .. py:function:: get_list()
@@ -55,9 +55,9 @@ Class Project
   .. note:: не возвращает объеткы, только заполняет ``поля класса``: **list_active_projects**, **list_projects**, **dict_projects**.
   
   * **заполняемые поля:**
-      :list_active_projects: (list) - список активных проектов, только имена
-      :list_projects:  (list) - список всех проектов (объекты)
-      :dict_projects: (dict) - словарь содержащий все проекты (объекты) с ключами по именам
+      :list_active_projects: (*list*) - список активных проектов, только имена
+      :list_projects:  (*list*) - список всех проектов (объекты)
+      :dict_projects: (*dict*) - словарь содержащий все проекты (объекты) с ключами по именам
   * **return** - (*True,  'Ok!'*) или (*False, comment*)
 
 .. py:function:: rename_project(new_name)
@@ -71,7 +71,7 @@ Class Project
 
 .. py:function:: remove_project()
 
-  удаляет проект из БД (не удаляя файловую структуру), ``перезагружает studio.list_projects ???``, приводит объектк empty (все поля по projects_keys = False).
+  удаляет проект из БД (не удаляя файловую структуру), ``перезагружает studio.list_projects ???``, приводит объект к сосотоянию *empty* (все поля по *projects_keys* = *False*).
   
   **Параметры:**
   

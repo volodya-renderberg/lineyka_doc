@@ -35,7 +35,7 @@ Class Workroom
 
   получение списка отделов.
   
-  .. note:: Заполняет поля ``класса``: **list_workroom**, **dict_by_name**, **dict_by_id**.
+  .. note:: Заполняет ``поля класса``: **list_workroom**, **dict_by_name**, **dict_by_id**.
   
   **Параметры:**
   
