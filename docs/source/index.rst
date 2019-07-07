@@ -18,6 +18,7 @@ Contents:
    project
    set_of_tasks
    group
+   season
 
 
 Indices and tables
