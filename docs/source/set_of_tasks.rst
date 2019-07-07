@@ -29,6 +29,9 @@ Class Set_of_tasks
   'extension',
   ]
   
+Методы
+------
+  
 .. py:function:: init_by_keys(keys[, new=True])
 
   инициализация по словарю.

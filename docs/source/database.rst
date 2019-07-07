@@ -3,6 +3,9 @@ Class Database
 
 **database(studio)**
 
+Методы
+------
+
 .. py:function:: get(level, read_ob, table_name, com[, table_root=False])
 
   чтение БД.

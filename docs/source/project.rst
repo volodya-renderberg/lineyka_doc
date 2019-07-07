@@ -17,6 +17,8 @@ Class Project
   'preview_img_path': 'text',
   }
   
+Методы
+------
   
 .. py:function:: add_project(project_name, project_path)
 
