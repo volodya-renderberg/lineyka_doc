@@ -49,7 +49,7 @@ Class Season
   * **name** (*str*) - имя серии
   * **new** (*bool*) - если *True* - вернёт новый экземпляр, если *False* - инициализирует текущий
   * **return:**
-      :если new = *True*: - season (экземпляр), *None* (при отсутствии экземпляра) 
+      :если new = *True*: - season (экземпляр), *None* (при отсутствии данного сезона) 
       :если new = *False*: - (*True, 'Ok!'*) или (*False, коммент*)
 
 .. py:function:: init_by_keys(keys[, new=True])

@@ -19,6 +19,7 @@ Contents:
    set_of_tasks
    group
    season
+   asset
 
 
 Indices and tables
