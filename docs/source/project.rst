@@ -18,6 +18,7 @@ Class Project
   'list_of_assets_path': 'text',
   'preview_img_path': 'text',
   'fps': 'real',
+  'units': 'text',
   }
 
 Атрибуты
@@ -38,6 +39,8 @@ Class Project
 :preview_img_path: (*str*) - путь до директории с превью картинок чата.
 
 :fps: (*float*) - fps проекта (по умолчанию 24).
+
+:units: (*str*) - юниты 3d сцен *['m', 'cm', 'mm']* по умолчанию *'m'*
 
 Методы
 ------
