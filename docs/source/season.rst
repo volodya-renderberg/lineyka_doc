@@ -25,6 +25,7 @@ Class Season
   import edit_db as db
   
   project = db.project()
+  
   season = db.season(project) # project - обязательный параметр при создании экземпляра season
   # доступ ко всем параметрам и методам принимаемого экземпляра project через season.project
   

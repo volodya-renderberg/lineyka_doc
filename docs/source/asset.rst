@@ -30,6 +30,7 @@ Class Asset
   import edit_db as db
   
   project = db.project()
+  
   asset = db.asset(project) # project - обязательный параметр при создании экземпляра asset
   # доступ ко всем параметрам и методам принимаемого экземпляра project через asset.project
   
