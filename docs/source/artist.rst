@@ -5,6 +5,8 @@ Class Artist
 
 **level** = 'studio'
 
+Данные хранимые в БД (имя столбца : тип данных):
+
 .. code-block:: python
 
   artists_keys = {
@@ -38,7 +40,7 @@ Class Artist
 
 :nik_name: (*str*) - никнейм (уникально).
 
-:user_name: (*str*) - юзернейм на текущем копьютере, откуда сделан вход.
+:user_name: (*str*) - юзернейм в текущей системе, откуда сделан вход.
 
 :password: (*str*) - 
 
