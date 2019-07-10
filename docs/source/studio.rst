@@ -1,3 +1,5 @@
+.. _class-studio-page:
+
 Class Studio
 ============
 

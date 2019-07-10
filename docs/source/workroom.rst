@@ -1,3 +1,5 @@
+.. _class-workroom-page:
+
 Class Workroom
 ==============
 

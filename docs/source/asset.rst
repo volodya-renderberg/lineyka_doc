@@ -1,3 +1,5 @@
+.. _class-asset-page:
+
 Class Asset
 ===========
 
@@ -57,7 +59,7 @@ Class Asset
 
 :parent': (*dict*) - ``?``
 
-:project: (*project*) - экземпляр *project* принимаемый при создании экземпляра класса, содержит все атрибуты и методы класса *project*.
+:project: (*project*) - экземпляр :ref:`class-project-page` принимаемый при создании экземпляра класса, содержит все атрибуты и методы :ref:`class-project-page`.
 
 Методы
 ------

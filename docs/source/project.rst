@@ -1,3 +1,5 @@
+.. _class-project-page:
+
 Class Project
 =============
 

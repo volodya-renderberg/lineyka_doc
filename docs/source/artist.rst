@@ -1,3 +1,5 @@
+.. _class-artist-page:
+
 Class Artist
 ============
 

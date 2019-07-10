@@ -1,3 +1,5 @@
+.. _class-database-page:
+
 Class Database
 ==============
 

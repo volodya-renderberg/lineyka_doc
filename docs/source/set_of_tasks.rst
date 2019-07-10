@@ -1,3 +1,5 @@
+.. _class-set-of-tasks-page:
+
 Class Set_of_tasks
 ==================
 
