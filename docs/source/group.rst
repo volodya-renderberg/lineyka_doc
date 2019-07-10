@@ -5,6 +5,8 @@ Class Group
 
 **level** = 'project'
 
+Данные хранимые в БД (имя столбца : тип данных):
+
 .. code-block:: python
   
   group_keys = {

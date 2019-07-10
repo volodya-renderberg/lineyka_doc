@@ -5,6 +5,8 @@ Class Project
 
 **level** = 'studio'
 
+Данные хранимые в БД (имя столбца : тип данных):
+
 .. code-block:: python
 
   projects_keys = {
@@ -15,8 +17,28 @@ Class Project
   'chat_img_path': 'text',
   'list_of_assets_path': 'text',
   'preview_img_path': 'text',
+  'fps': 'real',
   }
-  
+
+Атрибуты
+--------
+
+:name: (*str*) - имя проекта (уникально).
+
+:path: (*str*) - путь до директории проекта.
+
+:status: (*str*) - *['active', 'none']*
+
+:project_database: (*json*) - настройки базы данных проекта.
+
+:chat_img_path: (*str*) - путь до директории с картинками чата.
+
+:list_of_assets_path: (*str*) - путь до файла с временными данными создаваемых ассетов.
+
+:preview_img_path: (*str*) - путь до директории с превью картинок чата.
+
+:fps: (*float*) - fps проекта (по умолчанию 24).
+
 Методы
 ------
   

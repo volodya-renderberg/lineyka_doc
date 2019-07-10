@@ -7,6 +7,8 @@ Class Set_of_tasks
 
 Редактирование наборов задач.
 
+Данные хранимые в БД (имя столбца : тип данных):
+
 .. code-block:: python
 
   set_of_tasks_keys = {
@@ -15,6 +17,8 @@ Class Set_of_tasks
   'sets':'json',
   'edit_time': 'timestamp',
   }
+  
+Структура словарей атрибута *sets*:
   
 .. code-block:: python
 
@@ -28,6 +32,17 @@ Class Set_of_tasks
   'task_type',
   'extension',
   ]
+  
+Атрибуты
+--------
+
+:name: (*str*) - имя сета (уникально)
+
+:asset_type: (*str*) - тип ассета из *studio.asset_types*
+
+:sets: (*list*) - сами задачи, список словарей с ключами по *sets_keys* (ключи соответсвую атрибутам класса Task).
+
+:edit_time: (*timestamp*) - дата и время последних изменений.
   
 Методы
 ------
