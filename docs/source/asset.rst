@@ -64,5 +64,122 @@ Class Asset
 Методы
 ------
 
+.. py:function:: init(asset_name, new = True)
 
+  заполнение полей экземпляра по studio.asset_keys
 
+  .. rubric:: Параметры:
+
+  * **asset_name** (*str*) - имя ассета. данные ассета будут считаны из базы данных
+  * **new** (*bool*) - если *True* - то возвращается новый инициализированный экземпляр класса asset, если *False* - то инициализируется текущий экземпляр
+  * **return**:
+      * если *new=True* - инициализированный экземпляр
+      * если *new=False* - (*True, 'Ok!'*) / или (*False, comment*)
+
+.. py:function:: init_by_keys(keys, new=True)
+
+  заполнение полей экземпляра по studio.asset_keys.
+
+  .. rubric:: Параметры:
+
+  * **keys** (*dict*) - словарь данных ассета, получаемый в из БД
+  * **new** (*bool*) - если *True* - то возвращается новый инициализированный экземпляр класса *asset*, если *False* - то инициализируется текущий экземпляр.
+  * **return**: 
+      * если *new=True* - инициализированный экземпляр, 
+      * если *new=False* - (*True, 'Ok!'*)
+
+.. py:function:: create(asset_type, list_keys)
+
+  создание ассетов по списку.
+
+  .. rubric:: Параметры:
+
+  * **asset_type** (*str*) - тип для всех ассетов из *studio.asset_types*
+  * **list_keys** (*list*) - список словарей по ключам *asset_keys* обязательные параметры в *keys* (*list_keys*): *name*, *group(id)*.
+  * **return** - (*True, assets_data*) или (*False, comment*)
+      * **assets_data** (*dict*) - словарь создаваемых асетов по именам, ``данные тоже словари ?? - Должны быть экземпляры``.
+
+.. py:function:: remove()
+
+  Перемещение текущего ассета в корзину, снятие задач с исполниетлей, изменение статуса и приоритета, разрыв исходящих связей ассета. Физически файлы ассета не удаляются.
+
+  .. rubric:: Параметры:
+
+  * **return** -  (*True, 'Ok!'*) или (*False, comment*).
+
+.. py:function:: copy_of_asset(new_group_name, new_asset_name, new_asset_type, set_of_tasks, data_of_source_asset=False)
+
+  копирование ассета, можно с изменением типа *char* на *obj* и обратно.
+
+  .. rubric:: Параметры:
+
+  * **self.project** должен быть инициализирован
+  * **new_group_name** (*str*) - имя группы для создаваемого ассета
+  * **new_asset_name** (*str*) - имя создаваемого ассета
+  * **new_asset_type** (*str*) из *studio.asset_types* - тип создаваемого ассета
+  * **set_of_tasks** (*str*) - имя набора задач
+  * **data_of_source_asset** (*dict*) - дата копируемого ассета, если *False* - то копируется инициализированный ассет
+  * **return** -  (*True, 'Ok!'*) или (*False, comment*)
+
+.. py:function:: get_list_by_type(asset_type= False)
+
+  возвращает ассеты (экземпляры) по типу. Если не указывать тип ассета, вернёт ассеты по всем типам.
+
+  .. rubric:: Параметры:
+
+  * **asset_type** (*str*) - тип ассета. Если не указывать тип ассета, вернёт ассеты по всем типам
+  * **return** (*True, [instances]*) или (*False, comment*)
+
+.. py:function:: get_list_by_all_types()
+
+  возвращает ассеты (экземпляры) по всем типам.
+  
+  .. note:: Обёртка на *get_list_by_type()*
+
+  .. rubric:: Параметры:
+
+  * **return** - (*True, [instances]*) или (*False, comment*)
+
+.. py:function:: get_list_by_group(group)
+
+  возвращает список ассетов (экземпляры) данной группы.
+
+  .. rubric:: Параметры:
+
+  * **group** (group) - экземпляр группы
+  * **return** - (*True, [instances]*) или (*False, comment*)
+
+.. py:function:: get_dict_by_name_by_all_types()
+
+  возвращает словарь ассетов (экземпляры) по именам, по всем типам.
+
+  .. rubric:: Параметры:
+
+  * **return** (*True, {asset_name: экземпляр}*) или (*False, comment*)
+
+.. py:function:: change_group(new_group_id)
+
+  изменение группы текущего ассета (ассет должен быть инициализирован).
+
+  .. rubric:: Параметры:
+
+  * **new_group_id** (*str*) - *id* новой группы
+  * **return** -  (*True, 'Ok!'*) или (*False, comment*)
+
+.. py:function:: change_priority(priority)
+
+  изменение приоритета текущего ассета (ассет должен быть инициализирован).
+
+  .. rubric:: Параметры:
+
+  * **priority** (*int*) - новый приоритет
+  * **return_data** -  (*True, 'Ok!'*) или (*False, comment*)
+
+.. py:function:: change_description(description)
+
+  изменение описания текущего ассета (ассет должен быть инициализирован).
+
+  .. rubric:: Параметры:
+
+  * **description** (*str*) - новое описание
+  * **return** -  (*True, 'Ok!'*) или (*False, comment*)
