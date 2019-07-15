@@ -20,6 +20,7 @@ Contents:
    group
    season
    asset
+   task
 
 
 Indices and tables
