@@ -15,7 +15,6 @@ Class Task
     'activity': 'text',
     'task_name': 'text',
     'task_type': 'text',
-    'season': 'text',
     'input': 'json',
     'status': 'text',
     'outsource': 'integer',
@@ -23,7 +22,6 @@ Class Task
     'planned_time': 'real',
     'time': 'real',
     'start': 'timestamp',
-    'approved_date': 'timestamp',
     'end': 'timestamp',
     'price': 'real',
     'tz': 'text',
@@ -52,33 +50,31 @@ Class Task
 Атрибуты
 --------
 
-:activity: (*str*)
+:activity: (*str*) - активити из *asset.ACTIVITY_FOLDER[asset_type]*
 
-:task_name: (*str*)
+:task_name: (*str*) - имя задачи, структура имени: *asset_name:task_name*
 
-:task_type: (*str*)
+:task_type: (*str*) - тип задачи из *studio.task_types* + *service*
 
-:season: ``?``
+:input: (*str* / *list*) - для сервисной задачи (*task_type=service*) - это список имён входящих задачь. для не сервисной задачи - это имя входящей задачи.
 
-:input: (*str* / *list*)
+:status: (*str*) - статус задачи из *studio.task_status*
 
-:status: (*str*)
+:outsource: (*int*) - значение из [0, 1] если = 1 - задача на аутсорсе.
 
-:outsource: (*int*)
+:artist: (*str*) - *nik_name* исполнителя.
 
-:artist: (*str*) - *nik_name*
+:planned_time: (*float*) - планируемое время (ед. измерения - час).
 
-:planned_time: (*float*)
+:time: (*float*) - реально затраченное время (ед. измерения - час).
 
-:time: (*float*)
+:start: (*timestamp*) - дата и время взятия задачи в работу.
 
-:start: (*timestamp*)
+:approved_date: (*timestamp*) - дата планируемого окончания работ (``должна вычисляться при инициализации экземпляра``)
 
-:approved_date: (*timestamp*)
+:end: (*timestamp*) - дата и время приёма задачи.
 
-:end: (*timestamp*)
-
-:price: (*float*)
+:price: (*float*) - стоимость работ по задаче (ед. измерения - юнит).
 
 :tz: ``должно быть specification``
 
@@ -88,10 +84,10 @@ Class Task
 
 :supervisor: ``?``
 
-:readers: (*dict*)
+:readers: (*dict*) - словарь: ключ - nik_name, значение - 0 или 1 (статус проверки),  плюс одна запись: ключ - 'first_reader, значение - nik_name - это первый проверяющий - пока он не проверит даннаня задача не будет видна у других проверяющих в списке на проверку.
 
-:output: (*list*)
+:output: (*list*) - список имён исходящих задач.
 
-:priority: (*int*)
+:priority: (*int*) - приоритет.
 
-:extension: (*str*)
+:extension: (*str*) - расширение файла для работы над данной задачей, начинается с точки, например: *'.blend'*
