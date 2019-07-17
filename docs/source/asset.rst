@@ -95,7 +95,7 @@ Class Asset
   .. rubric:: Параметры:
 
   * **asset_type** (*str*) - тип для всех ассетов из *studio.asset_types*
-  * **list_keys** (*list*) - список словарей по ключам *asset_keys* обязательные параметры в *keys* (*list_keys*): *name*, *group(id)*.
+  * **list_keys** (*list*) - список словарей по ключам *asset_keys* обязательные параметры в *keys* (*list_keys*): *name*, *group(id)*.  важный параметр *set_of_tasks* - имя набора задач
   * **return** - (*True, assets_data*) или (*False, comment*)
       * **assets_data** (*dict*) - словарь создаваемых асетов по именам, ``данные тоже словари ?? - Должны быть экземпляры``.
 
