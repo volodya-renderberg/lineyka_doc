@@ -20,16 +20,16 @@ Class Task
     'status': 'text',
     'outsource': 'integer',
     'artist': 'text', # nik_name
-    'planned_time': 'text',
-    'time': 'text',
+    'planned_time': 'real',
+    'time': 'real',
     'start': 'timestamp',
+    'approved_date': 'timestamp',
     'end': 'timestamp',
-    'supervisor': 'text',
-    'approved_date': 'text',
     'price': 'real',
     'tz': 'text',
     'chat_local': 'json',
     'web_chat': 'text',
+    'supervisor': 'text',
     'readers': 'json', # словарь: ключ - nik_name, значение - 0 или 1 (статус проверки),  плюс одна запись: ключ - 'first_reader, значение - nik_name - это первый проверяющий - пока он не проверит даннаня задача не будет видна у других проверяющих в списке на проверку.
     'output': 'json',
     'priority':'integer',
@@ -68,19 +68,17 @@ Class Task
 
 :artist: (*str*) - *nik_name*
 
-:planned_time: 
+:planned_time: (*float*)
 
-:time:
+:time: (*float*)
 
-:start:
+:start: (*timestamp*)
 
-:end:
+:approved_date: (*timestamp*)
 
-:supervisor: ``?``
+:end: (*timestamp*)
 
-:approved_date:
-
-:price:
+:price: (*float*)
 
 :tz: ``должно быть specification``
 
@@ -88,10 +86,12 @@ Class Task
 
 :web_chat: ``?``
 
-:readers: 
+:supervisor: ``?``
 
-:output:
+:readers: (*dict*)
 
-:priority:
+:output: (*list*)
 
-:extension:
+:priority: (*int*)
+
+:extension: (*str*)
