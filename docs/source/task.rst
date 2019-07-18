@@ -24,7 +24,7 @@ Class Task
     'start': 'timestamp',
     'end': 'timestamp',
     'price': 'real',
-    'tz': 'text',
+    'specification': 'text',
     'chat_local': 'json',
     'web_chat': 'text',
     'supervisor': 'text',
@@ -76,7 +76,7 @@ Class Task
 
 :price: (*float*) - стоимость работ по задаче (ед. измерения - юнит).
 
-:tz: ``должно быть specification``
+:specification: ``должно быть specification`` ссылка на техническое задание.
 
 :chat_local: ``?``
 
