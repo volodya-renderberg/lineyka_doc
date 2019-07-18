@@ -97,27 +97,27 @@ Class Task
 
 .. py:function:: init(task_name[, new = True])
 
-  заполнение полей объекта по studio.tasks_keys
+  заполнение полей объекта по *studio.tasks_keys*
   
   .. rubric:: Параметры:
 
-  task_name (str) - имя задачи. данные задачи будут считаны из базы данных.
-  new (bool) - если True - то возвращается новый инициализированный объект класса task, если False - то инициализируется текущий объект.
-  return_data - 
-  если new=True - инициализированный объект, 
-  если new=False - (True, 'Ok!') / или (False, comment)
+  * **task_name** (*str*) - имя задачи. данные задачи будут считаны из базы данных
+  * **new** (*bool*) - если True - то возвращается новый инициализированный объект класса task, если False - то инициализируется текущий объект
+  * **return**:
+      * если *new=True* - инициализированный объект, 
+      * если *new=False* - (*True, 'Ok!'*) / или (*False, comment*)
 
 .. py:function:: init_by_keys(keys[, new=True])
 
-  заполнение полей объекта по studio.tasks_keys.
+  заполнение полей объекта по *studio.tasks_keys*
   
   .. rubric:: Параметры:
 
-  keys (dict) - словарь данных задачи, получаемый в функции *__read_task()*.
-  new (bool) - если True - то возвращается новый инициализированный объект класса task, если False - то инициализируется текущий объект.
-  return_data - 
-  если new=True - инициализированный объект, 
-  если new=False - (True, 'Ok!')
+  * **keys** (*dict*) - словарь данных задачи, получаемый в функции *__read_task()*
+  * **new** (*bool*) - если True - то возвращается новый инициализированный объект класса task, если False - то инициализируется текущий объект
+  * **return**:
+    *если *new=True* - инициализированный объект, 
+    *если *new=False* - (*True, 'Ok!'*)
 
 .. py:function:: service_input_to_end(assets)
 
@@ -125,9 +125,9 @@ Class Task
   
   .. rubric:: Параметры:
   
-  task_data (dict) - текущая задача.
-  assets (dict) - словарь всех ассетов по всем типам (ключи - имена, данные - ассеты (словари)) - результат функции asset.get_name_data_dict_by_all_types()
-  return_data - (True, new_status) или (False, коммент)
+  * **task_data** (*dict*) - текущая задача
+  * **assets** (*dict*) - словарь всех ассетов по всем типам (ключи - имена, данные - ассеты ``(словари)??``) - результат функции *asset.get_name_data_dict_by_all_types()*
+  * **return** - (*True, new_status*) или (*False, коммент*)
 
 .. py:function:: from_input_status(input_task[, this_task=False])
 
@@ -135,26 +135,27 @@ Class Task
   
   .. rubric:: Параметры:
   
-  input_task (task / False) входящая задача.
-  this_task (task / False) - если False - то предполагается текущая задача.
-  return_data - new_status
+  * **input_task** (*task / False*) входящая задача
+  * **this_task** (*task / False*) - если False - то предполагается текущая задача
+  * **return** - *new_status*
 
-.. py:function:: this_change_from_end(this_task=False[, assets = False])
+.. py:function:: this_change_from_end([this_task=False, assets = False])
 
   замена статусов исходящих задачь при изменении статуса текущей задачи с done или с close.
   
   .. rubric:: Параметры:
   
-  this_task (task / False) - если False то текущая задача.
-  assets (dict) - словарь всех ассетов по всем типам (ключи - имена, данные - ассеты (словари)) - результат функции asset.get_name_data_dict_by_all_types()
-  return_data - (True, 'Ok!') / или (False, comment)
+  * **this_task** (*task / False*) - если False то текущая задача
+  * **assets** (*dict*) - словарь всех ассетов по всем типам (ключи - имена, данные - ассеты ``(словари)??``) - результат функции *asset.get_name_data_dict_by_all_types()*
+  * **return** - (*True, 'Ok!'*) / или (*False, comment*)
 
-.. py:function:: this_change_to_end(self, assets = False)
+.. py:function:: this_change_to_end(self[, assets = False])
 
-  замена статусов исходящих задачь при изменении статуса текущей задачи на done или close.
+  замена статусов исходящих задачь при изменении статуса текущей задачи на *done* или *close*.
   
   .. rubric:: Параметры:
   
-  task - инициализирован.
-  assets (dict) - словарь всех ассетов по всем типам (ключи - имена, данные - ассеты (словари)) - результат функции asset.get_name_data_dict_by_all_types()
-  return_data - (True, 'Ok!') / или (False, comment)
+  * **task** - инициализирован
+  * **assets** (*dict*) - словарь всех ассетов по всем типам (ключи - имена, данные - ассеты ``(словари)??``) - результат функции *asset.get_name_data_dict_by_all_types()*
+  * **return** - (*True, 'Ok!'*) / или (*False, comment*)
+
