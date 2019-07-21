@@ -23,6 +23,7 @@ Contents:
    task
    log
    chat
+   list_of_assets
 
 
 Indices and tables
