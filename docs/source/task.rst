@@ -420,7 +420,7 @@ Class Task
 
   * **return** - (*True, 'ok'*) или (*False, коммент*)
 
-.. py:function:: rework_task(current_user = False)
+.. py:function:: rework_task(current_user)
 
   отправка задачи на переработку из статуса на проверке, при этом проверяется наличие свежего (последние 30 минут) коментария от проверяющего.
   
@@ -431,7 +431,7 @@ Class Task
   * **current_user** (*artist*) - экземпляр класса артист, должен быть инициализирован - *artist.get_user()* - если *False* - то задача отправится на переделку без проверки чата (для тех нужд)
   * **return** - (*True, 'ok'*) или (*False, коммент*)
 
-.. py:function:: return_a_job_task(task_data=False)
+.. py:function:: return_a_job_task([task_data=False])
 
   возврат в работу задачи из завершённых статусов (*done*, *close*).
 
