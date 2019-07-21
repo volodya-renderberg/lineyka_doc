@@ -130,109 +130,22 @@ Class Task
 
   .. rubric:: Параметры:
 
-  * **asset_id** (*str*) - требуется если экземпляр *task.asset* не инициализирован, либо требуется список задач не для инициализированного ассета
+  * **asset_id** (*str*) - требуется если экземпляр *task.asset* не инициализирован, либо требуется список задач не для этого инициализированного ассета
   * **task_status** (*str*) - фильтр по статусам задач
   * **artist** (*str*) - фильтр по имени
   * **return** - (*True, task_list(список задач - экземпляры)*) или (*False, коммент*)
 
 .. py:function:: get_tasks_by_name_list(task_name_list[, assets_data = False])
 
-  возвращает задачи (экземпляры) по списку имён задач, из различных ассетов.
+  возвращает задачи (экземпляры) по списку имён задач, из различных ассетов данного проекта.
   
   .. note:: *task.asset.project* - инициализирован
 
   .. rubric:: Параметры:
 
   * **task_name_list** (*list*) - список имён задач
-  * **assets_data** (*dict*) ``?? или экземпляр`` - *dict{asset_name: {asset_data},...}* результат функции *asset.get_name_data_dict_by_all_types()*, если не передавать - будет произведено чтение БД
-  * **return** - (*True, { task_name: task_data(dict), ... }*) или (*False, коммент*)
-    
-Смены статусов
-~~~~~~~~~~~~~~
-
-.. py:function:: service_input_to_end(assets)
-
-  изменение статуса текущей сервис задачи (задача инициализирована), по проверке статусов входящих задач. и далее задач по цепочке.
-  
-  .. rubric:: Параметры:
-  
-  * **task_data** (*dict*) - текущая задача
-  * **assets** (*dict*) - словарь всех ассетов по всем типам (ключи - имена, данные - ассеты ``(словари)??``) - результат функции *asset.get_name_data_dict_by_all_types()*
-  * **return** - (*True, new_status*) или (*False, коммент*)
-
-.. py:function:: from_input_status(input_task[, this_task=False])
-
-  возвращает новый статус текущей задачи (если *this_task=False*), на основе входящей задачи.
-  
-  .. rubric:: Параметры:
-  
-  * **input_task** (*task / False*) входящая задача
-  * **this_task** (*task / False*) - если *False* - то предполагается текущая задача
-  * **return** - *new_status*
-
-.. py:function:: this_change_from_end([this_task=False, assets = False])
-
-  замена статусов исходящих задач при изменении статуса текущей задачи с *done* или с *close*.
-  
-  .. rubric:: Параметры:
-  
-  * **this_task** (*task / False*) - если *False* то текущая задача
-  * **assets** (*dict*) - словарь всех ассетов по всем типам (ключи - имена, данные - ассеты ``(словари)??``) - результат функции *asset.get_name_data_dict_by_all_types()*
-  * **return** - (*True, 'Ok!'*) / или (*False, comment*)
-
-.. py:function:: this_change_to_end(self[, assets = False])
-
-  замена статусов исходящих задач при изменении статуса текущей задачи на *done* или *close*.
-  
-  .. rubric:: Параметры:
-  
-  * **task** - инициализирован
-  * **assets** (*dict*) - словарь всех ассетов по всем типам (ключи - имена, данные - ассеты ``(словари)??``) - результат функции *asset.get_name_data_dict_by_all_types()*
-  * **return** - (*True, 'Ok!'*) / или (*False, comment*)
-  
-.. py:function:: service_add_list_to_input(input_task_list)
-
-  добавление списка задач во входящие сервисной задаче, со всеми вытикающими изменениями статусов.
-
-  .. note:: *task.asset* инициализирован
-  
-  .. rubric:: Параметры:
-
-  * **input_task_list** (*list*) - список задач (экземпляры)
-  * **return** - (*True, new_ststus, append_task_name_list)*)  или (*False, коммент*)
-
-.. py:function:: service_add_list_to_input_from_asset_list(asset_list[, task_data=False])
-
-  добавление задач во входящие сервисной задаче из списка ассетов. Какую именно добавлять задачу из ассета, определяет алгоритм.
-
-  .. rubric:: Параметры:
-
-  * **asset_list** (*list*) - подсоединяемые ассеты (словари, или экземпляры)
-  * **task_data** (*dict*) - изменяемая задача, если *False* - значит предполагается, что *task* инициализирован ``лучше не использовать``
-  * **return** - (*True, (this_task_data, append_task_name_list)*) ``?? пересмотреть``  или (*False, коммент*)
-
-.. py:function:: service_remove_task_from_input(removed_tasks_list[, task_data=False, change_status = True])
-
-  удаление списка задач из входящих сервисной задачи.
-
-  .. rubric:: Параметры:
-
-  * **task_data** (*dict*) - изменяемая задача, если *False* - значит предполагается, что *task* инициализирован ``лучше не использовать``
-  * **removed_tasks_list** (*list*) - содержит словари удаляемых из инпута задач
-  * **return** - (*True, (new_status, input_list)*) или (*False, коммент*)
-      * **new_status** (*str*)- новый статтус данной задачи
-      * **input_list** (*list*) - фактически *task.input*
-
-.. py:function:: service_change_task_in_input(removed_task_data, added_task_data[, task_data=False])
-
-  замена входящей задачи одной на другую для сервисной задачи.
-
-  .. rubric:: Параметры:
-
-  * **removed_task_data** (*dict*) - удаляемая задача ``?? или экземпляр``
-  * **added_task_data** (*dict*) - добавляемая задача ``?? или экземпляр``
-  * **task_data** (*dict*) - изменяемая задача, если *False* - значит предполагается, что *task* инициализирован. ``лучше не использовать``
-  * **return** - (*True, (this_task_data, append_task_name_list)*)  или (*False, коммент*)
+  * **assets_data** (*dict*) - *dict{asset_name: asset(экземпляр),...}* результат функции *asset.get_dict_by_name_by_all_types()*, если не передавать - будет произведено чтение БД
+  * **return** - (*True, { task_name: task(экземпляр), ... }*) или (*False, коммент*)
 
 Пути
 ~~~~
@@ -252,8 +165,8 @@ Class Task
   
   .. rubric:: Параметры:
 
-  * **task_data** (*dict*) - требуется если не инициализирован *task* ``лучше не использовать``
   * **version** (*str*) - *hex* 4 символа
+  * **task_data** (*dict*) - требуется если не инициализирован *task* ``лучше не использовать``
   * **return** - (*True, version_file_path*) или  (*False, comment*)
 
 .. py:function:: get_new_file_path([task_data=False])
@@ -283,13 +196,13 @@ Class Task
   * **look** (*bool*) - если *True* - то статусы меняться не будут, если *False* - то статусы меняться будут
   * **current_artist** (*artist*) - если не передавать, то в случае *look=False* - будет выполняться *get_user()* - лишнее обращение к БД
   * **tasks** (*dict*) - словарь задач данного артиста по именам. - нужен для случая когда *look=False*, при отсутствии будет считан - лишнее обращение к БД
-  * **input_task** (*task*) - входящая задача - для *open_from_input*
-  * **open_path** (*unicode/str*) - путь к файлу - указывается для *open_from_file*
+  * **input_task** (*task*) - входящая задача - для *open_from_input* (если передавать - то имеется ввиду открытие из активити входящей задачи)
+  * **open_path** (*unicode/str*) - путь к файлу - указывается для *open_from_file* (открытие из указанного файла)
   * **return** (*True, file_path - куда открывается файл*) или (*False, coment*)
 
 .. py:function:: push_file(description, current_file[, current_artist=False])
 
-  локальная запись новой рабочей версии файла, сохранение версии + запись *push* лога.
+  запись новой рабочей версии файла, сохранение версии + запись *push* лога.
   
   .. rubric:: Параметры:
 
@@ -303,11 +216,11 @@ Class Task
 
 .. py:function:: get_versions_list_of_cache_by_object(ob_name[, activity = 'cache', extension = '.pc2', task_data=False])
 
-  список версий кеша для экземпляра.
+  список версий кеша для меш объекта.
 
   .. rubric:: Параметры:
 
-  * **ob_name** (*str*) - имя 3d экземпляра
+  * **ob_name** (*str*) - имя 3d объекта
   * **activity** (*str*) - по умолчанию *"cache"* (для *blender*) - для других программ может быть другим, например *"maya_cache"*
   * **extension** (*str*) - расширение файла кеша
   * **task_data** (*dict*) - читаемая задача(словарь), если *False* - значит предполагается, что *task* инициализирован. ``лучше не использовать``
@@ -317,7 +230,7 @@ Class Task
 
 .. py:function:: get_final_cache_file_path(cache_dir_name[, activity = 'cache', extension = '.pc2', task_data=False])
 
-  путь к последней версии кеша для экземпляра.
+  путь к последней версии кеша для меш объекта.
 
   .. rubric:: Параметры:
 
@@ -329,7 +242,7 @@ Class Task
 
 .. py:function:: get_new_cache_file_path(cache_dir_name[, activity = 'cache', extension = '.pc2', task_data=False])
 
-  путь к новой версии кеша для экземпляра.
+  путь к новой версии кеша для меш объекта.
 
   .. rubric:: Параметры:
 
@@ -341,7 +254,7 @@ Class Task
 
 .. py:function:: get_version_cache_file_path(version, cache_dir_name[, activity = 'cache', extension = '.pc2', task_data=False])
 
-  путь к определённой версии файла кеша экземпляра.
+  путь к определённой версии файла кеша меш объекта.
 
   .. rubric:: Параметры:
 
@@ -363,7 +276,7 @@ Class Task
 
   .. rubric:: Параметры:
 
-  * **list_of_tasks** (*list*) - список задач (словари по *tasks_keys*)
+  * **list_of_tasks** (*list*) - список задач (словари по *tasks_keys*, обязательные параметры: *task_name*)
   * **return** - (*True, 'ok'*) или (*False, коммент*)
 
 .. py:function:: add_single_task(task_data)
@@ -536,3 +449,107 @@ Class Task
 
   * **change_statuses** (*list*) - [*(task_ob, new_status), ...*]
   * **return_data** - (*True, {task_name: new_status, ... } *) или (*False, коммент*)
+  
+Служебные
+~~~~~~~~~
+
+Чтение
+""""""
+
+.. py:function:: __read_task(task_name)
+
+  возврат словаря задачи (по ключам из *tasks_keys*, чтение БД) по имени задачи. если нужен объект используем *task.init(name)*.
+
+  .. rubric:: Параметры:
+
+  * **task_name** (*str*) - имя задачи
+  * **return** - (*True, task_data(словарь)*) или (*False, коммент*)
+
+Смены статусов
+""""""""""""""
+
+.. py:function:: service_input_to_end(assets)
+
+  изменение статуса текущей сервис задачи (задача инициализирована), по проверке статусов входящих задач. и далее задач по цепочке.
+  
+  .. note:: данный экземпляр *task* инициализирован.
+  
+  .. rubric:: Параметры:
+  
+  * **assets** (*dict*) - словарь всех ассетов по всем типам (ключи - имена, данные - ассеты экземпляры) - результат функции *asset.get_dict_by_name_by_all_types()*
+  * **return** - (*True, new_status*) или (*False, коммент*)
+
+.. py:function:: from_input_status(input_task[, this_task=False])
+
+  возвращает новый статус задачи (текущей - если *this_task=False*), на основе входящей задачи, ``?? не меняя статуса данной задачи``.
+  
+  .. rubric:: Параметры:
+  
+  * **input_task** (*task / False*) входящая задача ``?? зачем вообще передавать, если есть есть атрибут input``
+  * **this_task** (*task / False*) - если *False* - то предполагается текущая задача
+  * **return** - *new_status*
+
+.. py:function:: this_change_from_end([this_task=False, assets = False])
+
+  замена статусов исходящих задач при изменении статуса текущей задачи с *done* или с *close*.
+  
+  .. rubric:: Параметры:
+  
+  * **this_task** (*task / False*) - если *False* то текущая задача
+  * **assets** (*dict*) - словарь всех ассетов по всем типам (ключи - имена, данные - ассеты (объекты)) - результат функции *asset.get_dict_by_name_by_all_types()*
+  * **return** - (*True, 'Ok!'*) / или (*False, comment*)
+
+.. py:function:: this_change_to_end(self[, assets = False])
+
+  замена статусов исходящих задач при изменении статуса текущей задачи на *done* или *close*.
+  
+  .. note:: данный экземпляр *task* инициализирован
+  
+  .. rubric:: Параметры:
+  
+  * **assets** (*dict*) - словарь всех ассетов по всем типам (ключи - имена, данные - ассеты (объекты)) - результат функции *asset.get_dict_by_name_by_all_types()*
+  * **return** - (*True, 'Ok!'*) / или (*False, comment*)
+  
+.. py:function:: service_add_list_to_input(input_task_list)
+
+  добавление списка задач во входящие сервисной задаче, со всеми вытикающими изменениями статусов.
+
+  .. note:: данный экземпляр *task* инициализирован
+  
+  .. rubric:: Параметры:
+
+  * **input_task_list** (*list*) - список задач (экземпляры)
+  * **return** - (*True, (new_ststus, append_task_name_list))* или (*False, коммент*)
+
+.. py:function:: service_add_list_to_input_from_asset_list(asset_list[, task_data=False])
+
+  добавление задач во входящие сервисной задаче из списка ассетов. Какую именно добавлять задачу из ассета, определяет алгоритм.
+
+  .. rubric:: Параметры:
+
+  * **asset_list** (*list*) - подсоединяемые ассеты (словари, или экземпляры)
+  * **task_data** (*dict*) - изменяемая задача, если *False* - значит предполагается, что *task* инициализирован ``лучше не использовать``
+  * **return** - (*True, (this_task_data, append_task_name_list)*) ``?? пересмотреть``  или (*False, коммент*)
+
+.. py:function:: service_remove_task_from_input(removed_tasks_list[, task_data=False, change_status = True])
+
+  удаление списка задач из входящих сервисной задачи.
+
+  .. rubric:: Параметры:
+
+  * **removed_tasks_list** (*list*) - содержит словари удаляемых из инпута задач ``?? переработать - заменить на объекты``
+  * **task_data** (*dict*) - изменяемая задача, если *False* - значит предполагается, что *task* инициализирован ``лучше не использовать``
+  * **return** - (*True, (new_status, input_list)*) или (*False, коммент*)
+      * **new_status** (*str*)- новый статтус данной задачи
+      * **input_list** (*list*) - фактически *task.input*
+
+.. py:function:: service_change_task_in_input(removed_task_data, added_task_data[, task_data=False])
+
+  замена входящей задачи одной на другую для сервисной задачи.
+
+  .. rubric:: Параметры:
+
+  * **removed_task_data** (*dict*) - удаляемая задача ``?? или экземпляр - возможно переработать - заменить на объекты``
+  * **added_task_data** (*dict*) - добавляемая задача ``?? или экземпляр - возможно переработать - заменить на объекты``
+  * **task_data** (*dict*) - изменяемая задача, если *False* - значит предполагается, что *task* инициализирован. ``лучше не использовать``
+  * **return** - (*True, (this_task_data, append_task_name_list)*)  или (*False, коммент*)
