@@ -85,7 +85,9 @@ Class Log
 
 .. py:function:: get_push_logs([task_data=False, time_to_str = False])
 
-  возможно устаревшая - возврат списка push логов для задачи.
+  возврат списка push логов для задачи.
+  
+  .. note:: Возможно устаревшая
 
   .. rubric:: Параметры:
 
