@@ -19,7 +19,7 @@ Class Chat
     'topic': 'json',
     'color': 'json',
     'status': 'text',
-    'reading_status': 'text',
+    'reading_status': 'json',
     }
     
 Создание экземпляра класса:
@@ -40,11 +40,60 @@ Class Chat
 --------
 
 :message_id: (*str*) -
+
 :date_time: 'timestamp',
+
 :date_time_of_edit: 'timestamp',
-:author: (*str*) -
-:topic: (*dict*) -
+
+:author: (*str*) - nik_name автора записи
+
+:topic: (*dict*) - словарь данных сообщения ``надо описать``
+
 :color: (*dict*) - ``??``
+
 :status: (*str*) -
-:reading_status: (*str*) -
+
+:reading_status: (*dict*) - ``??``
+
 :task: (*task*) - экземпляр :ref:`class-task-page` принимаемый при создании экземпляра класса, содержит все атрибуты и методы :ref:`class-task-page`.
+
+Методы
+------
+
+.. py:function:: record_messages(input_keys[, artist_ob=False])
+
+  запись сообщения в чат для задачи.
+
+  .. note:: *self.task* - должен быть инициализирован
+
+  .. rubric:: Параметры:
+
+  * **input_keys** (*dict*) - словарь по *studio.chats_keys* - обязательные ключи: *'topic','color','status', 'reading_status'*  ``??????? список обязательных полей будет пересмотрен``
+  * **artist_ob** (*bool/artist*) - если *False* - значит создаётся новый объект *artist* и определяется текущий пользователь
+  * **return** - (*True, 'Ok!'*) или (*False, comment*)
+
+.. py:function:: read_the_chat([message_id=False, sort_key=False, reverse = False])
+
+  чтение сообщений чата задачи.
+
+  .. note:: *self.task* - должен быть инициализирован
+
+  .. rubric:: Параметры:
+
+  * **message_id** (*hex/bool*) - *id* читаемого сообщения, если *False* - то читаются все сообщения чата
+  * **sort_key** (*str*) - ключ по которому сортируется список. Если  *False* то сортировки не происходит
+  * **reverse** (*bool*) - пока никак не используется
+  * **return** - (*True, [messages]*) или (*False, comment*)
+
+.. py:function:: edit_message(message_id, new_data[, artist_ob=False])
+
+  изменение записи автором сообщения.
+
+  .. note:: *self.task* - должен быть инициализирован
+
+  .. rubric:: Параметры:
+
+  * **artist_ob** (*bool/artist*) - если *False* - значит создаётся новый объект *artist* и определяется текущий пользователь
+  * **message_id** (*hex*) - *id* изменяемого сообщения
+  * **new_data** (*dict*) - словарь данных на замену - *topic, color*
+  * **return** - (*True, 'Ok!'*) или (*False, comment*)
