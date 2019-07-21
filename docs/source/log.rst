@@ -126,6 +126,13 @@ Class Log
   * **comment** (*str*) - комментарий
   * **version** (*str/int*) - номер версии *<= 9999*
   * **task_data** (*bool/dict*) - если *False* - значит читается *self.task* ``лучше не использовать``
-  * **playblast_read_log** (*task_data=False*) - чтение логов плейбластов шота
-  * **task_data** (*bool/dict*) - если *False* - значит читается *self.task*, если передаётся, то только задача данного ассета
+  * **return** - (*True, 'Ok!'*) или (*False, comment*)
+  
+.. py:function:: playblast_read_log ([task_data=False])
+
+  чтение логов плейбластов шота.
+  
+  .. rubric:: Параметры:
+  
+  * **task_data** (*bool/dict*) - если *False* - если *False* - значит читается *self.task* ``лучше не использовать``
   * **return** - (*True, [{playblast_log}, ... ]*) (возвращаемый список сортирован по порядку) или (*False, comment*)
