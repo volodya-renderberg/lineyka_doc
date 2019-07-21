@@ -22,6 +22,7 @@ Contents:
    asset
    task
    log
+   chat
 
 
 Indices and tables
