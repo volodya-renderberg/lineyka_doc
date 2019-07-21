@@ -41,11 +41,11 @@ Class Chat
 
 :message_id: (*str*) -
 
-:date_time: 'timestamp',
+:date_time: (*timestamp*) - время и дата создания записи
 
-:date_time_of_edit: 'timestamp',
+:date_time_of_edit: (*timestamp*) - время и дата изменения записи
 
-:author: (*str*) - nik_name автора записи
+:author: (*str*) - *nik_name* автора записи
 
 :topic: (*dict*) - словарь данных сообщения ``надо описать``
 
