@@ -21,6 +21,7 @@ Contents:
    season
    asset
    task
+   log
 
 
 Indices and tables
