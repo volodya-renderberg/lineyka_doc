@@ -103,7 +103,7 @@ Class Log
 
   * **artist_ob** - (*artist*) - объект *artist*, его никнейм записывается в лог
   * **comment** (*str*) - комментарий
-  * **version** (*str/int*) - номер версии *<= 9999*
+  * **version** (*str/int*) - номер версии *<= 9999* ``возможно должно быть автоопределение ``
   * **task_data** (*bool/dict*) - если *False* - значит читается *self.task* ``лучше не использовать``
   * **return** - (*True, 'Ok!'*) или (*False, comment*)
 
@@ -124,7 +124,7 @@ Class Log
 
   * **artist_ob** - (*artist*) - объект *artist*, его никнейм записывается в лог
   * **comment** (*str*) - комментарий
-  * **version** (*str/int*) - номер версии *<= 9999*
+  * **version** (*str/int*) - номер версии *<= 9999* ``возможно должно быть автоопределение ``
   * **task_data** (*bool/dict*) - если *False* - значит читается *self.task* ``лучше не использовать``
   * **return** - (*True, 'Ok!'*) или (*False, comment*)
   
