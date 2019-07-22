@@ -118,7 +118,7 @@ Class Task
   
   .. rubric:: Параметры:
 
-  * **keys** (*dict*) - словарь данных задачи, получаемый в функции *__read_task()*
+  * **keys** (*dict*) - словарь данных задачи, получаемый в функции *_read_task()*
   * **new** (*bool*) - если *True* - то возвращается новый инициализированный экземпляр класса *task*, если *False* - то инициализируется текущий экземпляр
   * **return**:
       * если *new=True* - инициализированный экземпляр, 
@@ -457,7 +457,7 @@ Class Task
 Чтение
 """"""
 
-.. py:function:: __read_task(task_name)
+.. py:function:: _read_task(task_name)
 
   возврат словаря задачи (по ключам из *tasks_keys*, чтение БД) по имени задачи. если нужен объект используем *task.init(name)*.
 
@@ -469,7 +469,7 @@ Class Task
 Смены статусов
 """"""""""""""
 
-.. py:function:: service_input_to_end(assets)
+.. py:function:: _service_input_to_end(assets)
 
   изменение статуса текущей сервис задачи (задача инициализирована), по проверке статусов входящих задач. и далее задач по цепочке.
   
@@ -480,7 +480,7 @@ Class Task
   * **assets** (*dict*) - словарь всех ассетов по всем типам (ключи - имена, данные - ассеты экземпляры) - результат функции *asset.get_dict_by_name_by_all_types()*
   * **return** - (*True, new_status*) или (*False, коммент*)
 
-.. py:function:: from_input_status(input_task[, this_task=False])
+.. py:function:: _from_input_status(input_task[, this_task=False])
 
   возвращает новый статус задачи (текущей - если *this_task=False*), на основе входящей задачи, ``?? не меняя статуса данной задачи``.
   
@@ -490,7 +490,7 @@ Class Task
   * **this_task** (*task / False*) - если *False* - то предполагается текущая задача
   * **return** - *new_status*
 
-.. py:function:: this_change_from_end([this_task=False, assets = False])
+.. py:function:: _this_change_from_end([this_task=False, assets = False])
 
   замена статусов исходящих задач при изменении статуса текущей задачи с *done* или с *close*.
   
@@ -500,7 +500,7 @@ Class Task
   * **assets** (*dict*) - словарь всех ассетов по всем типам (ключи - имена, данные - ассеты (объекты)) - результат функции *asset.get_dict_by_name_by_all_types()*
   * **return** - (*True, 'Ok!'*) / или (*False, comment*)
 
-.. py:function:: this_change_to_end(self[, assets = False])
+.. py:function:: _this_change_to_end(self[, assets = False])
 
   замена статусов исходящих задач при изменении статуса текущей задачи на *done* или *close*.
   
@@ -511,7 +511,7 @@ Class Task
   * **assets** (*dict*) - словарь всех ассетов по всем типам (ключи - имена, данные - ассеты (объекты)) - результат функции *asset.get_dict_by_name_by_all_types()*
   * **return** - (*True, 'Ok!'*) / или (*False, comment*)
   
-.. py:function:: service_add_list_to_input(input_task_list)
+.. py:function:: _service_add_list_to_input(input_task_list)
 
   добавление списка задач во входящие сервисной задаче, со всеми вытикающими изменениями статусов.
 
@@ -522,7 +522,7 @@ Class Task
   * **input_task_list** (*list*) - список задач (экземпляры)
   * **return** - (*True, (new_ststus, append_task_name_list))* или (*False, коммент*)
 
-.. py:function:: service_add_list_to_input_from_asset_list(asset_list[, task_data=False])
+.. py:function:: _service_add_list_to_input_from_asset_list(asset_list[, task_data=False])
 
   добавление задач во входящие сервисной задаче из списка ассетов. Какую именно добавлять задачу из ассета, определяет алгоритм.
 
@@ -532,7 +532,7 @@ Class Task
   * **task_data** (*dict*) - изменяемая задача, если *False* - значит предполагается, что *task* инициализирован ``лучше не использовать``
   * **return** - (*True, (this_task_data, append_task_name_list)*) ``?? пересмотреть``  или (*False, коммент*)
 
-.. py:function:: service_remove_task_from_input(removed_tasks_list[, task_data=False, change_status = True])
+.. py:function:: _service_remove_task_from_input(removed_tasks_list[, task_data=False, change_status = True])
 
   удаление списка задач из входящих сервисной задачи.
 
@@ -544,7 +544,7 @@ Class Task
       * **new_status** (*str*)- новый статтус данной задачи
       * **input_list** (*list*) - фактически *task.input*
 
-.. py:function:: service_change_task_in_input(removed_task_data, added_task_data[, task_data=False])
+.. py:function:: _service_change_task_in_input(removed_task_data, added_task_data[, task_data=False])
 
   замена входящей задачи одной на другую для сервисной задачи.
 
