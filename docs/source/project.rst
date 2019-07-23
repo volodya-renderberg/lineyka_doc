@@ -127,8 +127,11 @@ Class Project
   
   * **status** (*str*) - присваиваемый статус
   * **return** - (*True, 'Ok!'*) или (*False, comment*)
+  
+Служебные
+~~~~~~~~~
 
-.. py:function:: make_folders(root)
+.. py:function:: __make_folders(root)
 
   создаёт файловую структуру проекта, при отсутствии.
   
@@ -136,3 +139,21 @@ Class Project
   
   * **root** (*str - path*) - корневой каталог проекта
   * **return** - *None*.
+
+.. py:function:: _write_settings()
+
+  запись настроек проекта в файл *project_path/studio.PROJECT_SETTING*
+  
+  .. rubric:: Параметры:
+  
+  * **return** - (*True, 'Ok!'*) или (*False, comment*)
+  
+.. py:function:: _read_settings()
+
+  чтение словаря параметров проекта из файла *project_path/studio.PROJECT_SETTING*
+  
+  .. rubric:: Параметры:
+  
+  * **return**:
+      * *data* - словарь по ключам *studio.projects_keys*
+      * *None* в случае остутствия файла.
