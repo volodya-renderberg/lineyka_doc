@@ -128,6 +128,24 @@ Class Project
   * **status** (*str*) - присваиваемый статус
   * **return** - (*True, 'Ok!'*) или (*False, comment*)
   
+.. py:function:: change_fps(fps)
+
+  изменение fps проекта, предполагается автоматическое назначение этого параметра в сценах.
+  
+  .. rubric:: Параметры:
+  
+  * **fps** (*float*) - fps
+  * **return** - (*True, 'Ok!'*) или (*False, comment*)
+  
+.. py:function:: change_units(fps)
+
+  изменение юнитов проекта, параметр для 3d сцен. Предполагается автоматическое назначение этого параметра в сценах.
+  
+  .. rubric:: Параметры:
+  
+  * **units** (*str*) - юниты для 3d сцен, значение из *studio.projects_units*
+  * **return** - (*True, 'Ok!'*) или (*False, comment*)
+  
 Служебные
 ~~~~~~~~~
 
@@ -143,6 +161,8 @@ Class Project
 .. py:function:: _write_settings()
 
   запись настроек проекта в файл *project_path/studio.PROJECT_SETTING*
+  
+  .. note:: Выполнять в каждой процедуре по редактированию параметров проекта.
   
   .. rubric:: Параметры:
   
