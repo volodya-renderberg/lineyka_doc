@@ -24,6 +24,7 @@ Contents:
    log
    chat
    list_of_assets
+   examples
 
 
 Indices and tables
