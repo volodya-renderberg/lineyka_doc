@@ -453,6 +453,16 @@ Class Task
   * **change_statuses** (*list*) - [*(task_ob, new_status), ...*]
   * **return_data** - (*True, {task_name: new_status, ... } *) или (*False, коммент*)
   
+.. py:function:: to_checking()
+
+  отправка текущей задачи на проверку
+
+  .. note:: *task* должен быть инициализирован, обёртка на task.change_work_statuses()
+  
+  .. rubric:: Параметры:
+  
+  * **return** - (*True, 'ok'*) или (*False, коммент*)
+  
 Служебные
 ~~~~~~~~~
 
