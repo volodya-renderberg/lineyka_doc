@@ -187,7 +187,7 @@ Class Task
   *	**activity** (*str*) - активити
   * **return** - (*True, publish_file_path*) или  (*False, comment*)
 
-.. py:function:: open_file([look=False, current_artist=False, tasks=False, input_task=False, open_path=False, launch=True])
+.. py:function:: open_file([look=False, current_artist=False, tasks=False, input_task=False, open_path=False, version=False, launch=True])
 
   откроет файл в приложении - согласно расширению.
   
@@ -198,6 +198,7 @@ Class Task
   * **tasks** (*dict*) - словарь задач данного артиста по именам (результат функции artist.get_working_tasks()). - нужен для случая когда *look=False*, при отсутствии будет считан - лишнее обращение к БД
   * **input_task** (*task*) - входящая задача - для *open_from_input* (если передавать - то имеется ввиду открытие из активити входящей задачи)
   * **open_path** (*unicode/str*) - путь к файлу - указывается для *open_from_file* (открытие из указанного файла)
+  * **version** (*bool/str*) - версия рабочего файла активити - если указать то будет открытие рабочего файла этой версии
   * **launch** (*bool*) - если *True* - то будет произведён запуск приложением, которое установлено в соответствии с данным расширением файла (для универсальной юзерской панели и для менеджерской панели, при открытии на проверку), если *False* - то запуска не будет, но все смены статусов произойдут и будет возвращён путь к файлу - для запуска из плагина
   * **return** (*True, file_path - куда открывается файл*) или (*False, coment*)
 
