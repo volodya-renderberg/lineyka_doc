@@ -89,7 +89,7 @@ Examples
 ~~~~~
 
 подробнее о :ref:`class-asset-page`
-подробнее о :ref:`class-group-page`
+подробнее о :ref:`class-group-page!get_list`
 
 Списки ассетов
 """"""""""""""
@@ -100,22 +100,19 @@ Examples
   asset = db.asset(project) # project - это экземпляр класса project
 
   # (2) получение списка ассетов по типу
-  assets_list = asset.get_list_by_type(asset_type = type)[1]
-  # type - тип из studio.asset_types
-  # assets_list - это список экземпляров класса asset
+  assets_list = asset.get_list_by_type(asset_type = type)[1] # type - тип из studio.asset_types
+                                                             # assets_list - это список экземпляров класса asset
   
   # (3) получение списка ассетов группы
   
   # (3.1) получение списка групп
   group = db.group(project) # project - это экземпляр класса project
-  groups_list = group.get_list(f = list_of_types)[1]
-  # list_of_types - это список типов ассетов из studio.asset_types
-  # groups_list - это список экземпляров групп
+  groups_list = group.get_list(f = list_of_types)[1] # list_of_types - это список типов ассетов из studio.asset_types
+                                                     # groups_list - это список экземпляров групп
   
   # (3.2) получение списка ассетов группы
-  assets_list = asset.get_list_by_group(group)[1]
-  # group - это экземпляр класса group из groups_list, полученный выше
-  # assets_list - это список экземпляров класса asset
+  assets_list = asset.get_list_by_group(group)[1] # group - это экземпляр класса group из groups_list, полученный выше
+                                                  # assets_list - это список экземпляров класса asset
 
 
 Списки задач ассетов
