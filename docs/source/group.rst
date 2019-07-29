@@ -105,7 +105,7 @@ Class Group
   * **return** - (*True, 'Ok!'*) или (*False, comment*).
   
 
-.. _group-get_list-label:
+.. _group-getlist-label:
 
 .. py:function:: get_list([f = False])
 
