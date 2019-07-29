@@ -123,7 +123,7 @@ Examples
 
   task = db.task(asset) # asset - это экземпляр класса asset, любой из списка assets_list, полученный выше
   
-  tasks_list = task.get_list() # tasks_list - это список задач данного ассета, экземпляры класса task
+  tasks_list = task.get_list()[1] # tasks_list - это список задач данного ассета, экземпляры класса task
   
 .. note::
 
