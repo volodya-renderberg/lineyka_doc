@@ -115,7 +115,7 @@ Examples
   assets_list = asset.get_list_by_group(group)[1] # group - это экземпляр класса group из groups_list, полученный выше
                                                   # assets_list - это список экземпляров класса asset
 
-подробнее о :ref:`group-getlist-label` :py:func:`group.get_list`
+подробнее о :py:meth:`group.get_list`  :py:meth:`.group.get_list`
 
 Списки задач ассетов
 """"""""""""""""""""
