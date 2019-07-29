@@ -104,7 +104,9 @@ Class Group
 
   * **return** - (*True, 'Ok!'*) или (*False, comment*).
   
-.. _group-getlist-label:
+
+.. _group-get_list-label:
+
 .. py:function:: get_list([f = False])
 
   возвращает список групп (экземпляры) согласно фильтру f.
