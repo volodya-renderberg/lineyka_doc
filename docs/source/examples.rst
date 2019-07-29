@@ -89,7 +89,8 @@ Examples
 ~~~~~
 
 подробнее о :ref:`class-asset-page`
-подробнее о :ref:`class-group-page!get_list`
+
+подробнее о :ref:`class-group-page`
 
 Списки ассетов
 """"""""""""""
