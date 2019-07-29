@@ -256,4 +256,11 @@ Examples
 
 .. note:: PySyde должен быть установлен в python системы.
 
-Появится чуть позже
+.. code-block:: python
+
+  import sys
+  import run2_chat
+  
+  sys.call_tracing(run2_chat.run, (project.name, task.task_name)) # запустится интерфейс(PySide) чата задачи
+                                          # project - экземпляр текущего проекта
+                                          # task - экземпляр текущей задачи
