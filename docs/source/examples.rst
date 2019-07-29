@@ -78,19 +78,18 @@ Examples
   
   # получение списка задач назначенных на исполнение артисту (для данного проекта)
   task_list = artist.get_working_tasks(project, statuses=artist.working_statuses.append('checking'))[1] # project - это экземпляр класса project
+                                                                                                        # task_list - это список экземпляров класса task
   
   # получение списка задач назначенных на проверку артисту (для данного проекта)
   task_list = artist.get_reading_tasks(project, statuses='checking')[1] # project - это экземпляр класса project
-  
-.. note::
-
-  *task_list* - это список экземпляров :ref:`class-task-page`
+                                                                        # task_list - это список экземпляров класса task
 
 
 Ассет
 ~~~~~
 
 подробнее о :ref:`class-asset-page`
+подробнее о :ref:`class-group-page!get_list`
 
 Списки ассетов
 """"""""""""""
@@ -102,6 +101,7 @@ Examples
 
   # (2) получение списка ассетов по типу
   assets_list = asset.get_list_by_type(asset_type = type)[1] # type - тип из studio.asset_types
+                                                             # assets_list - это список экземпляров класса asset
   
   # (3) получение списка ассетов группы
   
@@ -112,23 +112,21 @@ Examples
   
   # (3.2) получение списка ассетов группы
   assets_list = asset.get_list_by_group(group)[1] # group - это экземпляр класса group из groups_list, полученный выше
-  
-.. note::
+                                                  # assets_list - это список экземпляров класса asset
 
-  *assets_list* - это список экземпляров :ref:`class-asset-page`
-  
+
 Списки задач ассетов
 """"""""""""""""""""
 
 .. code-block:: python
 
-  task = db.task(asset) # asset - это экземпляр класса asset, любой из списка assets_list
+  task = db.task(asset) # asset - это экземпляр класса asset, любой из списка assets_list, полученный выше
   
-  tasks_list = task.get_list()
+  tasks_list = task.get_list() # tasks_list - это список задач данного ассета, экземпляры класса task
   
 .. note::
 
-  *tasks_list* - это список задач данного ассета, экземпляры :ref:`class-task-page`. Задачи с типом *'service'* не содержат файловой структуры и не используются артистом.
+  Среди задач будут и задачи с типом *'service'*, они не содержат файловой структуры и не используются артистом.
 
 
 Задачи
