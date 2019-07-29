@@ -103,7 +103,6 @@ Class Group
   **Параметры:**
 
   * **return** - (*True, 'Ok!'*) или (*False, comment*).
-  
 
 .. py:function:: get_list([f = False])
 
