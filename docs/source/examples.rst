@@ -40,9 +40,9 @@ Examples
   
 Студия, проект и ассеты создаются в системной *tmp* директории:
   * проект - *Project*
-  * группы - *props*, *locations*
-  * ассеты - *topor*, *vedro*, *location_01*
-  * исполнители - *vofka*, *dimka*, *slavka* (все пароли *1234*)
+  * группы - *props* ``obj``, *locations* ``location``
+  * ассеты - *topor*, *vedro*, (``props``) *location_01* (``locations``)
+  * исполнители - *vofka* ``root``, *dimka*, *slavka* ``users`` (все пароли *1234*)
   
 Команды python api
 ------------------
