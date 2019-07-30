@@ -6,7 +6,7 @@ Examples
 Требования
 ----------
 
-  * модуль должен содержать следующие файлы из *lineyka*:
+  * модуль плагина должен содержать следующие файлы из *lineyka*:
       * *edit_db.py*
       * *lineyka_chat.py*
       * *run_chat.py*
@@ -39,10 +39,10 @@ Examples
   python test.py
   
 Студия, проект и ассеты создаются в системной *tmp* директории:
-* проект - *Project*
-* группы - *props*, *locations*
-* ассеты - *topor*, *vedro*, *location_01*
-* исполнители - *vofka*, *dimka*, *slavka* (все пароли *1234*)
+  * проект - *Project*
+  * группы - *props*, *locations*
+  * ассеты - *topor*, *vedro*, *location_01*
+  * исполнители - *vofka*, *dimka*, *slavka* (все пароли *1234*)
   
 Команды python api
 ------------------
