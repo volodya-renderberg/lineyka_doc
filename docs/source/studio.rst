@@ -10,6 +10,12 @@ Class Studio
 Атрибуты
 --------
 
+:task_status: (*tuple*) - все возможные статусы задач: ``('null','ready', 'ready_to_send', 'work', 'work_to_outsorce', 'pause', 'recast', 'checking', 'done', 'close')``
+
+:working_statuses: (*list*) - рабочие статусы (задачи с этими статусами отображаются в списке задач исполнителя) ``['ready', 'ready_to_send', 'work', 'work_to_outsorce', 'pause', 'recast']``
+
+:end_statuses: (*tuple*) - статусы завершения работы над задачами (задачи с этими статусами не отображаются в списке задач исполнителей) ``('done', 'close')``
+
 :studio_folder: (*str*) - ``атрибут класса`` путь к директории хранения мета данных студии.
 
 :tmp_folder: (*str*) - ``атрибут класса`` путь к директории хранения временных рабочих файлов.
