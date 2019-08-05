@@ -15,6 +15,7 @@ Class Task
     'activity': 'text',
     'task_name': 'text',
     'task_type': 'text',
+    'source': 'json',
     'input': 'json',
     'status': 'text',
     'outsource': 'integer',
@@ -55,6 +56,8 @@ Class Task
 :task_name: (*str*) - имя задачи, структура имени: *asset_name:task_name*
 
 :task_type: (*str*) - тип задачи из *studio.task_types* + *service*
+
+:source: (*list*) - имена задач, объекты из активити которых используются как исходники.
 
 :input: (*str* / *list*) - для сервисной задачи (*task_type=service*) - это список имён входящих задач. для не сервисной задачи - это имя входящей задачи.
 
