@@ -31,7 +31,10 @@ Specifications:
 .. toctree::
    :maxdepth: 2
    
+   specifications/branch
    specifications/commit_push_publish
+   specifications/season_series_shot
+   specifications/time_log
 
 Indices and tables
 ==================
