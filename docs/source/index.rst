@@ -25,10 +25,13 @@ Contents:
    chat
    list_of_assets
    examples
-   specifications/commit_push_publish
    
-Specifications
+Specifications:
 
+.. toctree::
+   :maxdepth: 2
+   
+   specifications/commit_push_publish
 
 Indices and tables
 ==================
