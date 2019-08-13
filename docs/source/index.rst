@@ -25,6 +25,9 @@ Contents:
    chat
    list_of_assets
    examples
+   specifications/commit_push_publish
+   
+Specifications
 
 
 Indices and tables
