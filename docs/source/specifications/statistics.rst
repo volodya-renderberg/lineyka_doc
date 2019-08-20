@@ -1,4 +1,4 @@
-.. statistics-page:
+.. _statistics-page:
 
 Statistics specification
 ========================
