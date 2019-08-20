@@ -35,6 +35,7 @@ Specifications:
    specifications/commit_push_publish
    specifications/season_series_shot
    specifications/time_log
+   specifications/additional_activities
 
 Indices and tables
 ==================
