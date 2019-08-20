@@ -6,8 +6,8 @@ Additional Activities specification
 дополнения в api
 ----------------
 
-* Новый атрибут *additional_activities*
-* Словарь по типу *asset.ACTIVITY_FOLDER*
+* **project** - новый атрибут *additional_activities*
+    * Словарь по типу *asset.ACTIVITY_FOLDER*
 * Добавить методы редактирования.
 * Применение: редактирование словаря при инициализации ассета:
     * *asset.ACTIVITY_FOLDER* дополняется из *asset.project.additional_activities*
