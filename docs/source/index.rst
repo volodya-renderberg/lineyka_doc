@@ -36,6 +36,7 @@ Specifications:
    specifications/season_series_shot
    specifications/time_log
    specifications/additional_activities
+   specifications/statistics
 
 Indices and tables
 ==================
