@@ -39,6 +39,8 @@ Specifications:
    specifications/statistics
    specifications/input_output
    specifications/source
+   specifications/chat
+   specifications/server
 
 Indices and tables
 ==================
