@@ -37,9 +37,9 @@ Push
 *******************
 
 * Файлы в директориях версий:
-    * **asset_name.ext** (для всех что не *sketch*)
-    * **asset_name#branch_name.ext** (для *sketch*)
-    * **asset_name#branch_name.png** (для *sketch*) - создавать тут для облегчения просмтотров, в паблише лишь перезапись.
+    * ``asset_name.ext`` (для всех что не *sketch*)
+    * ``asset_name#branch_name.ext`` (для *sketch*)
+    * ``asset_name#branch_name.png`` (для *sketch*) - создавать тут для облегчения просмтотров, в паблише лишь перезапись.
 
 Publish
 -------
@@ -57,8 +57,8 @@ Publish
 *******************
 
 * Сверху файлы последней версии:
-    * **asset_name.ext** (для всех что не *sketch*)
-    * **asset_name#branch_name.ext** (для *sketch*)
-    * **asset_name#branch_name.png** (для *sketch*)
+    * ``asset_name.ext`` (для всех что не *sketch*)
+    * ``asset_name#branch_name.ext`` (для *sketch*)
+    * ``asset_name#branch_name.png`` (для *sketch*)
 * Директории:
-    * **version_num** - содержат весь набор файлов версии.
+    * ``version_num`` - содержат весь набор файлов версии.
