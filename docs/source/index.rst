@@ -29,7 +29,7 @@ Contents:
 Specifications:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    
    specifications/branch
    specifications/commit_push_publish
@@ -41,6 +41,7 @@ Specifications:
    specifications/source
    specifications/chat
    specifications/server
+   specifications/episode_sequence_shot
 
 Indices and tables
 ==================
