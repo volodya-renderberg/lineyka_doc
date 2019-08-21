@@ -37,6 +37,8 @@ Specifications:
    specifications/time_log
    specifications/additional_activities
    specifications/statistics
+   specifications/input_output
+   specifications/source
 
 Indices and tables
 ==================
