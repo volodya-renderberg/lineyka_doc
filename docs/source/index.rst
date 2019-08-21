@@ -33,7 +33,7 @@ Specifications:
    
    specifications/branch
    specifications/commit_push_publish
-   specifications/season_series_shot
+   specifications/season_episode_sequence_shot
    specifications/time_log
    specifications/additional_activities
    specifications/statistics
@@ -41,7 +41,6 @@ Specifications:
    specifications/source
    specifications/chat
    specifications/server
-   specifications/episode_sequence_shot
 
 Indices and tables
 ==================
