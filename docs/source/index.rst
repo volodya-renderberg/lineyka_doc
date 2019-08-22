@@ -34,8 +34,8 @@ Specifications:
    specifications/branch
    specifications/commit_push_publish
    specifications/season_episode_sequence_shot
-   specifications/time_log
    specifications/additional_activities
+   specifications/time_log
    specifications/statistics
    specifications/input_output
    specifications/source

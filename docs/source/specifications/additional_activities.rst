@@ -8,9 +8,9 @@ Additional Activities specification
 
 * **project** - новый атрибут *additional_activities*
     * Словарь по типу *asset.ACTIVITY_FOLDER*
-* Добавить методы редактирования.
-* Применение: редактирование словаря при инициализации ассета:
-    * *asset.ACTIVITY_FOLDER* дополняется из *asset.project.additional_activities*
+    * Добавить методы и инструменты редактирования. (*api, gui*)
+    * Применение: редактирование словаря при инициализации ассета:
+        * *asset.ACTIVITY_FOLDER* дополняется из *asset.project.additional_activities*
 * Убрать псевдонимы
 * Возможно добавить описание активити (вместо псевдонима)
 

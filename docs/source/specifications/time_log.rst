@@ -3,8 +3,8 @@
 Time Log specification
 ======================
 
-task атрибуты:
---------------
+Атрибуты в task:
+----------------
 
 * **open_time**:
     * не имеет значения записывается или нет в бд
@@ -24,7 +24,7 @@ task.log (project-level)
 artist_log (studio-level)
 -------------------------
 
-.. note:: :ref:`class-log-page` добавить методы для чтения-записи принимающие объект *artist*.
+.. note:: :ref:`class-log-page` добавить методы для чтения-записи, принимающие объект *artist*.
 
 * **table_name**: ``nik_name:log``
 * **table_columns**: ``[project_name, task_name, full_time, $, start, finish]`` (новый словарь *studio.artist_log_keys*)
