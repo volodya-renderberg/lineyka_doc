@@ -53,7 +53,7 @@ Class Log
 
 :description: (*str*) - коментарий
 
-:branch: (*str*) - ветка ``пока не реализовано использование``
+:branch: (*str*) - ветка см. :ref:`branch-page`
 
 :task: (*task*) - экземпляр :ref:`class-task-page` принимаемый при создании экземпляра класса, содержит все атрибуты и методы :ref:`class-task-page`.
     
