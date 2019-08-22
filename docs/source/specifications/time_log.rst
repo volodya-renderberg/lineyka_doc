@@ -28,6 +28,21 @@ artist_log (studio-level)
 
 * **table_name**: ``nik_name:log``
 * **table_columns**: ``[project_name, task_name, full_time, $, start, finish]`` (новый словарь *studio.artist_log_keys*)
+* запись создаётся при первом выполнении ``task.open`` и далее редактируется:
+    * **start** - время создания записи.
     * **full_time** - ссумируется при каждом коммите.
     * **$** - вносится по принятию задачи.
     * **finish** - вносится по принятию задачи (Время принятия, чтобы не было проблем с оплатой за период).
+    
+artist_daily_log (studio-level)
+-------------------------------
+
+Сплошная запись затраченного времени по задачам при выполнении *task.commit*
+
+.. note:: :ref:`class-log-page` не создавать отдельных методов, выполнять на фоне.
+
+* **table_name**: ``nik_name:daily_log``
+* **table_columns**: ``[project_name, task_name, date, time]`` (новый словарь *studio.artist_daily_log_keys*)
+* при каждом выполнении *task.commit* создаётся новая запись.
+    * **date** - время коммита
+    * **time** - затраченное время между ``open`` и ``commit``
