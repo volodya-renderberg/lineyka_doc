@@ -38,7 +38,7 @@ Specifications:
    specifications/time_log
    specifications/statistics
    specifications/input_output
-   specifications/source
+   specifications/task
    specifications/chat
    specifications/server
 
