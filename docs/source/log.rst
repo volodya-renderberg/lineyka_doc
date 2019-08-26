@@ -12,14 +12,15 @@ Class Log
 .. code-block:: python
 
   logs_keys = {
-    'version': 'text',
-    'date_time': 'timestamp',
-    'activity': 'text',
-    'task_name': 'text',
-    'action': 'text',
-    'artist': 'text',
-    'description': 'text',
-    'branch' : 'text',
+    'version': 'text',              # *hex* 4 символа
+    'date_time': 'timestamp',       # время и дата записи
+    'activity': 'text',             # ативити задачи
+    'task_name': 'text',            # имя задачи
+    'action': 'text',               # тип записи из log.log_actions
+    'artist': 'text',               # nik_name артиста, кто делает запись
+    'description': 'text',          # коментарий
+    'branch' : 'text',              # ветка см. :ref:`branch-page`
+    'time' : 'integer',             # время затраченное на commit, ед. измерения секунда.
     }
     
 Создание экземпляра класса:
@@ -39,21 +40,7 @@ Class Log
 Атрибуты
 --------
 
-:version: (*str*) - *hex* 4 символа
-
-:date_time: (*timestamp*) - время и дата записи
-
-:activity: (*str*) - ативити задачи
-
-:task_name: (*str*) - имя задачи
-
-:action: (*str*) - тип записи из [*'push', 'publish'*]
-
-:artist: (*str*) - *nik_name* артиста, кто делает запись
-
-:description: (*str*) - коментарий
-
-:branch: (*str*) - ветка см. :ref:`branch-page`
+:log_actions: (*list*) - *['commit', 'push', 'publish', 'open', 'report','recast' , 'change_artist', 'close', 'done', 'return_a_job', 'send_to_outsource', 'load_from_outsource']*
 
 :task: (*task*) - экземпляр :ref:`class-task-page` принимаемый при создании экземпляра класса, содержит все атрибуты и методы :ref:`class-task-page`.
     
