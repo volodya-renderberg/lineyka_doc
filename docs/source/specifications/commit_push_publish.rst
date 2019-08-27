@@ -14,7 +14,7 @@ Commit
 
 Cоздание локальной версии.
 
-* место хранения ``work`` директория, определяется в *set studio*, метод ``studio.set_work_dir()``
+* место хранения ``work`` директория, определяется в *set studio*, метод ``studio.set_work_folder()``
 
 Push
 ----
