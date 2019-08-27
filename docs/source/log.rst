@@ -12,7 +12,7 @@ Class Log
 .. code-block:: python
 
   logs_keys = {
-    'version': 'text',              # *hex* 4 символа
+    'version': 'text',              # hex 4 символа
     'date_time': 'timestamp',       # время и дата записи
     'activity': 'text',             # ативити задачи
     'task_name': 'text',            # имя задачи
