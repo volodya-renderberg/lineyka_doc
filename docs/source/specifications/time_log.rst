@@ -27,7 +27,7 @@ artist_log (studio-level)
 .. note:: :ref:`class-log-page` добавить методы для чтения-записи, принимающие объект *artist*.
 
 * **table_name**: ``nik_name:log``
-* **table_columns**: ``[project_name, task_name, full_time, price, start, finish]`` (новый словарь *studio.artist_logs_keys*)
+* **table_columns**: ``[project_name, task_name, full_time, price, start, finish]`` (словарь *studio.artists_logs_keys*)
 * запись создаётся при первом выполнении ``task.open`` и далее редактируется:
     * **start** - время создания записи.
     * **full_time** - ссумируется при каждом коммите, ед. измерения секунда.
