@@ -77,7 +77,7 @@ Class Log
   .. rubric:: Параметры:
 
   * **action** (*bool / str*) если *False* - то возврат для всех *action*
-  * **return** - (*True, [{log}, ... ]*) (возвращаемый список сортирован по порядку) или (*False, comment*)
+  * **return** - (*True, ([список словарей логов, сотрирован по порядку], [список наименований веток])*) или (*False, comment*)
 
 .. py:function:: get_push_logs([task_data=False, time_to_str = False])
 
@@ -89,7 +89,7 @@ Class Log
 
   * **task_data** (*bool/dict*) - если *False* - значит читается *self.task* ``лучше не использовать``
   * **time_to_str** (*bool*) - если *True* - то преобразует дату в строку
-  * **return** - (*True, [{push_log}, ... ]*) (возвращаемый список сортирован по порядку) или (*False, comment*)
+  * **return** - (*True, ([список словарей логов, сотрирован по порядку], [список наименований веток])*) или (*False, comment*)
 
 .. py:function:: camera_write_log(artist_ob, comment, version[, task_data=False])
 
