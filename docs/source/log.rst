@@ -76,7 +76,7 @@ Class Log
 
   .. rubric:: Параметры:
 
-  * **action** (*bool / str*) если *False* - то возврат для всех *action*
+  * **action** (*bool / str / list*) если *False* - то возврат для всех *action*, если *list* - то будет использован оператор ``WHERE OR`` тоесть возврат по всем перечисленным экшенам.
   * **return** - (*True, ([список словарей логов, сотрирован по порядку], [список наименований веток])*) или (*False, comment*)
 
 .. py:function:: get_push_logs([task_data=False, time_to_str = False])
