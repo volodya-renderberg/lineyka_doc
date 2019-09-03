@@ -111,17 +111,8 @@ New Methods
   
 .. py:function:: get_version_work_file_path()
 
-  .. rubric:: Студийный работник:
-  
-  * загрузка списка *commit* версий без учёта пользователя.
-  * путь по указанной версии.
-  * *return* - (*path*, номер версии)
-  
-  .. rubric:: Аутсорс:
-  
-  * загрузка списка *commit + pull* версий данного пользователя.
-  * путь по указанной версии.
-  * *return* - (*path*, номер версии)
+  * обёртка на *studio.template_get_work_path()*
+  * получение шаблонного пути версии данной задачи.
 
 .. py:function:: get_final_push_file_path()
 
