@@ -32,7 +32,7 @@ Specifications:
    :maxdepth: 1
    
    specifications/branch
-   specifications/commit_push_publish
+   specifications/commit_pull_push_publish
    specifications/season_episode_sequence_shot
    specifications/additional_activities
    specifications/time_log
