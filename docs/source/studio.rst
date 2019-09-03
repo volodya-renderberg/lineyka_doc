@@ -97,3 +97,23 @@ Class Studio
       * *EDIT* - расширение по значению *extension* будет заменено на расширение по значению *new_extension* - при этом приложение для открытия файлов удаляемого расширения будет перезаписано на новое расширение
   * **new_extension** (*str*) - новое расширение на замену старому. Имет смысл только когда *action = EDIT*
   * **return** - (*True, 'Ok!'*) или (*False, Comment*)
+  
+.. py:function:: template_get_work_path(c_task[, version=False])
+
+  получение шаблоного пути до *commit* или *pull* версии рабочего файла или пути к его активити (в локальной *work* директории).
+  
+  .. rubric:: Параметры:
+  
+  * **c_task**  (*task*) - задача, для которой ищется файл.
+  * **version** (False / int / str) - номер версии или *False* - в этом случае возврат только пути до активити.
+  * **return** - (*True, (path, version)*) или (*False, Comment*)
+  
+.. py:function:: template_get_push_path(c_task[, version=False])
+
+  получение шаблоного пути до *push* версии файла или пути к его активити (на сервере студии).
+  
+  .. rubric:: Параметры:
+  
+  * **c_task**  (*task*) - задача, для которой ищется файл.
+  * **version** (False / int / str) - номер версии или *False* - в этом случае возврат только пути до активити.
+  * **return** - (*True, (path, version)*) или (*False, Comment*)
