@@ -114,7 +114,8 @@ New Methods
 .. py:function:: get_version_work_file_path()
 
   * обёртка на *studio.template_get_work_path()*
-  * получение шаблонного пути версии данной задачи.
+  * получение шаблонного пути версии данной задачи, с проверкой существования.
+  * возврат *path* без номера версии.
 
 .. py:function:: get_final_push_file_path()
 
