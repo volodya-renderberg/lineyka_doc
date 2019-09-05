@@ -108,7 +108,7 @@ Class Studio
   * **version** (False / int / str) - номер версии или *False* - в этом случае возврат только пути до активити.
   * **return** - (*True, (path)*) или (*False, Comment*)
   
-.. py:function:: template_get_push_path(c_task[, version=False])
+.. py:function:: template_get_push_path(c_task[, version=False, branches=False, look=False])
 
   получение шаблоного пути до *push* версии файла или пути к его активити (на сервере студии).
   
