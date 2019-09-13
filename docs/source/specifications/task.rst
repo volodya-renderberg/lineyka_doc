@@ -79,8 +79,8 @@ deadline
 New Methods
 ***********
 
-Чтение версий
--------------
+Work пути
+---------
 
 .. py:function:: get_final_work_file_path()
 
@@ -119,6 +119,14 @@ New Methods
   * обёртка на *studio.template_get_work_path()*
   * получение шаблонного пути версии данной задачи, с проверкой существования.
   * возврат *path* без номера версии.
+  
+.. py:function:: get_new_work_file_path()
+
+  * определение новой версии по *pull + commit* логам, чтение бд.
+  * *return* - (*path, version*) - версия нужна для создания лога.
+  
+Push пути
+---------
 
 .. py:function:: get_final_push_file_path()
 
@@ -150,14 +158,6 @@ New Methods
   .. rubric:: Аутсорс:
   
   * игнор
-  
-Пути для создания новых версий
-------------------------------
-
-.. py:function:: get_new_work_file_path()
-
-  * определение новой версии по *pull + commit* логам, чтение бд.
-  * *return* - (*path, version*) - версия нужна для создания лога.
   
 .. py:function:: get_new_push_file_path()
 
