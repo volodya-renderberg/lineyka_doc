@@ -98,7 +98,16 @@ Class Studio
   * **new_extension** (*str*) - новое расширение на замену старому. Имет смысл только когда *action = EDIT*
   * **return** - (*True, 'Ok!'*) или (*False, Comment*)
   
-.. py:function:: template_get_work_path(c_task[, version=False])
+.. py:function:: _template_version_num(version)
+
+  преобразование номера версии к правильному строковому формату
+  
+  .. rubric:: Параметры:
+  
+  * **version** (*int / str*) - номер версии число или строка, преобразуемая в строку
+  * **return** (*True, version_str*) или (*False*, comment) - если переданная строка не преобразуется в число.
+  
+.. py:function:: _template_get_work_path(c_task[, version=False])
 
   получение шаблоного пути до *commit* или *pull* версии рабочего файла или пути к его активити (в локальной *work* директории).
   
@@ -108,7 +117,7 @@ Class Studio
   * **version** (False / int / str) - номер версии или *False* - в этом случае возврат только пути до активити.
   * **return** - (*True, (path)*) или (*False, Comment*)
   
-.. py:function:: template_get_push_path(c_task[, version=False, branches=False, look=False])
+.. py:function:: _template_get_push_path(c_task[, version=False, branches=False, look=False])
 
   получение шаблоного пути до *push* версии файла или пути к его активити (на сервере студии).
   
@@ -119,3 +128,7 @@ Class Studio
   * **branches** (*bool / list*) - список веток из которых делался *push* - для *task_type* = *sketch*
   * **look** (*bool*) - рассматривается только при *task_type* = *sketch*, если *False* - то используется *c_task.extension*, если *True* - то используется *studio.look_extension* (список путей для просмотра)
   * **return** - (*True, (path или path_dict - ключи имена веток)*) или (*False, Comment*)
+
+.. py:function:: _template_get_publish_path(c_task[, version=False, branches=False, look=False])
+
+  
