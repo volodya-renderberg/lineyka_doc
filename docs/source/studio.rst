@@ -119,7 +119,7 @@ Class Studio
   
 .. py:function:: _template_get_push_path(c_task[, version=False, branches=False, look=False])
 
-  получение шаблоного пути до *push* версии файла или пути к его активити (на сервере студии).
+  получение шаблоного пути до *push* версии файла или пути к его активити на сервере студии.
   
   .. rubric:: Параметры:
   
@@ -131,4 +131,12 @@ Class Studio
 
 .. py:function:: _template_get_publish_path(c_task[, version=False, branches=False, look=False])
 
+  получение шаблонных путей для *publish* версий на сервере студии.
   
+  .. note:: Если не передавать ``version`` - то будет получен путь к файлам, которые располагаются сверху директорий версий - это файлы последней версии.
+  
+  * **c_task**  (*task*) - задача, для которой ищется файл.
+  * **version** (*False / int / str*) - номер версии или *False* - в этом случае путь до финальной версии (файлы сверху директорий версий).
+  * **branches** (*bool / list*) - список веток из которых делался *push* - для *task_type* = *sketch*
+  * **look** (*bool*) - рассматривается только при *task_type* = *sketch*, если *False* - то используется *c_task.extension*, если *True* - то используется *studio.look_extension* (список путей для просмотра)
+  * **return** - (*True, (path или path_dict - ключи имена веток)*) или (*False, Comment*)
