@@ -162,8 +162,64 @@ Class Task
   * **assets_data** (*dict*) - *dict{asset_name: asset(экземпляр),...}* результат функции *asset.get_dict_by_name_by_all_types()*, если не передавать - будет произведено чтение БД
   * **return** - (*True, { task_name: task(экземпляр), ... }*) или (*False, коммент*)
 
-Пути
-~~~~
+
+Work пути
+~~~~~~~~~
+
+.. py:function:: get_final_work_file_path([current_artist=False])
+
+  возвращает путь и версию последнего рабочего файла, для взятия в работу. Логика тут :ref:`task-specification-page`
+  
+  .. rubric:: Параметры:
+  
+  * **current_artist** (*artist*) - текущий пользователь, если не передавать, будет сделано *get_user*
+  * **return** - (*True, (path, version)*) или (*False, comment*)
+  
+.. py:function:: get_version_work_file_path(version)
+
+  возвращает путь до указанной версии рабочего файла.
+  
+  .. rubric:: Параметры:
+  
+  * **version** (*int / str*) - номер версии
+  * **return** - (*True, path*) - или (*false, comment*)
+  
+.. py:function:: get_new_work_file_path()
+
+  создание пути для новой *commit* или *pull* версии файла.
+  
+  .. rubric:: Параметры:
+  
+  * **return** - (*True, (path, version)*) или (*False, comment*)
+  
+Push пути
+~~~~~~~~~
+
+.. py:function:: get_final_push_file_path([current_artist=False])
+
+  возвращает путь и версию финальной *push* версии файла.
+  
+  .. rubric:: Параметры:
+  
+  * **current_artist** (*artist*) - текущий пользователь, если не передавать, будет сделано *get_user()*
+  * **return** 
+      * для ``sketch`` - (*True*, ( {словарь - ключи: типы путей ``look_path``, ``push_path``, значение: {словарь - пути по веткам}}, *version* ))
+      * для остальных - (*True, (path, version)*) - или (*false, comment*)
+      
+.. py:function:: get_version_push_file_path(version[, current_artist=False])
+
+  возвращает путь до указанной *push* версии файла.
+  
+  .. rubric:: Параметры:
+  
+  * **version** (*int / str*) - номер версии
+  * **current_artist** (*artist*) - текущий пользователь, если не передавать, будет сделано *get_user()*
+  * **return**
+      * для ``sketch`` - (*True*, {словарь - ключи: типы путей ``look_path`` или ``push_path``, значение: {словарь - пути по веткам}})
+      * для остальных - (*True, path*) - или (*false, comment*)
+
+Пути (old)
+~~~~~~~~~~
 
 .. py:function:: get_final_file_path([task_data=False])
 

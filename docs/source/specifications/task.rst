@@ -1,4 +1,4 @@
-.. _source-page:
+.. _task-specification-page:
 
 Task specification
 ==================
