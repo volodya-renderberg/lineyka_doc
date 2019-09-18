@@ -217,6 +217,33 @@ Push пути
   * **return**
       * для ``sketch`` - (*True*, {словарь - ключи: типы путей ``look_path`` или ``push_path``, значение: {словарь - пути по веткам}})
       * для остальных - (*True, path*) - или (*false, comment*)
+      
+.. py:function:: get_new_push_file_path([version=False, current_artist=False])
+
+  возвращает пути и версию до новой *push* версии
+  
+  .. rubric:: Параметры:
+  
+  * **version** (*int / str*) - номер версии исходника (*pull* или *commit*) при отсутствии *push* последней версии. Для мультипаблиша (*sketch*) всегда только из последних версий веток.
+  * **current_artist** (*artist*) - текущий пользователь, если не передавать, будет сделано *get_user()*
+  * **return**
+      * для ``sketch`` - (*True*, ({словарь с ключами: ``source_path``, ``source_versions``, ``push_path``, ``look_path`` - значения словари по веткам}, *new_version*)
+      * для остальных (*True*, ((*source_path*, *new_path*), *new_version*))
+      
+Publish пути
+~~~~~~~~~~~~
+
+.. py:function:: get_version_publish_file_path()
+
+  пути до файлов указанной *publish* версии.
+
+.. py:function:: get_final_publish_file_path()
+
+  пути до файлов последней *publish* версии, до тех файлов, которые сверху директорий версий в паблиш директории активити.
+
+.. py:function:: get_new_publish_file_path()
+
+  пути до файлов новой *publish* версии (и в директории, и сверху директории)
 
 Пути (old)
 ~~~~~~~~~~
