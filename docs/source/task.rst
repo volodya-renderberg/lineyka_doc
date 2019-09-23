@@ -233,17 +233,33 @@ Push пути
 Publish пути
 ~~~~~~~~~~~~
 
-.. py:function:: get_version_publish_file_path()
+.. py:function:: get_version_publish_file_path(version)
 
   пути до файлов указанной *publish* версии.
+  
+  .. rubric:: Параметры
+  
+  * **version** (*int / str*) - номер *publish* версии
+  * **return** (*True, path* или *dict*(пути по веткам)) или (*False, comment*)
 
 .. py:function:: get_final_publish_file_path()
 
-  пути до файлов последней *publish* версии, до тех файлов, которые сверху директорий версий в паблиш директории активити.
+  пути к *top* версии паблиш файлов
+  
+  .. rubric:: Параметры
+  
+  * **return** (*True, path* или *dict*(пути по веткам)) или (*False, comment*)
 
 .. py:function:: get_new_publish_file_path()
 
-  пути до файлов новой *publish* версии (и в директории, и сверху директории)
+  пути до файлов новой *publish* версии (и *top*, и версию)
+  
+  .. rubric:: Параметры
+  
+  * **return**: (*true, (dict_path, version*)) или (*False, comment*)
+  * структура **dict_path**:
+      * ключи - ``top_path``, ``version_path``,
+      * значения - пути или словари путей по веткам.
 
 Пути (old)
 ~~~~~~~~~~
