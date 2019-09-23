@@ -98,6 +98,15 @@ Class Studio
   * **new_extension** (*str*) - новое расширение на замену старому. Имет смысл только когда *action = EDIT*
   * **return** - (*True, 'Ok!'*) или (*False, Comment*)
   
+.. py:function:: set_work_folder(path)
+
+  определение пути до рабочей директории пользователя, заполнение поля ``studio.work_folder``. Пользовательская настройка запись в ``.init.py``
+  
+  .. rubric:: Параметры:
+  
+  * **path** (*str*) - путь до директории.
+  * **return** - (*True, ok*) или (False, comment)
+  
 .. py:function:: _template_version_num(version)
 
   преобразование номера версии к правильному строковому формату
