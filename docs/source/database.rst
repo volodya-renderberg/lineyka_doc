@@ -74,6 +74,8 @@ Class Database
   * **where** (*dict*)- 1) строка условия, 2) словарь по *keys*, может иметь ключ условия - *'condition'* значения из *[or, end]* 3) *False* - значит выделяется всё
   * **table_root** (*str*)- для тех случаев когда имя файла ДБ(sqlite3) не соответствует имени таблицы, если есть table_root - имя файла ДБ будет определяться по нему. table_root - может быть как именем таблицы - например: 'assets', так и именем файла - .assets.db
   * **return** - (*True, [строки таблицы базы данных - словари]*) или (*False, comment*)
+  
+  .. note:: при остутсвии таблицы вернёт - (True, [])
 
 .. py:function:: update(level, read_ob, table_name, keys, update_data, where[, table_root=False])
 
