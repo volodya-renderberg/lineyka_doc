@@ -174,6 +174,7 @@ Work пути
   
   * **current_artist** (*artist*) - текущий пользователь, если не передавать, будет сделано *get_user*
   * **return** - (*True, (path, version)*) или (*False, comment*)
+      * если нет ни одного лога - (*True, ('','')*)
   
 .. py:function:: get_version_work_file_path(version)
 
