@@ -301,6 +301,21 @@ Publish пути
 
   *	**activity** (*str*) - активити
   * **return** - (*True, publish_file_path*) или  (*False, comment*)
+  
+Операции commit/open/push/publish
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. py:function:: commit(work_path, description[, branch=False, artist_ob=False])
+
+  запись новой рабочей версии в ``work`` директорию.
+  
+  .. rubric:: Параметры:
+  
+  * **work_path** (*unicode*) - путь к текущему рабочему файлу
+  * **description** (*unicode*) - коммент
+  * **branch** (*unicode*) - наименование ветки, если не передавать - то *master*
+  * **artist_ob** (*artist*) - если не передовать, то будет выполнен *get_user()*
+  * **return** (*True, path* - путь до сохранённого файла) или (*False, comment*)
 
 .. py:function:: open_file([look=False, current_artist=False, tasks=False, input_task=False, open_path=False, version=False, launch=True])
 
@@ -580,6 +595,29 @@ Publish пути
   
 Служебные
 ~~~~~~~~~
+
+Хуки
+~~~~
+
+.. py:function:: _pre_commit(work_path, save_path)
+
+  вызов одноимённого хука. Вызывается из ``commit``
+  
+  .. rubric:: Параметры:
+  
+  * **work_path** (*unicode*) - путь текущего рабочего файла
+  * **save_path** (*unicode*) - путь сохранения файла
+  * **return** - (*True, 'Ok!'*) или (*False, coment*)
+  
+.. py:function:: _post_commit(work_path, save_path)
+
+  вызов одноимённого хука. Вызывается из ``commit``
+  
+  .. rubric:: Параметры:
+  
+  * **work_path** (*unicode*) - путь текущего рабочего файла
+  * **save_path** (*unicode*) - путь сохранения файла
+  * **return** - (*True, 'Ok!'*) или (*False, coment*)
 
 Чтение
 """"""
