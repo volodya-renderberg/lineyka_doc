@@ -458,12 +458,19 @@ Publish пути
 
   * **key** (*str*) - ключ для которого идёт замена
       * допустимые ключи для замены:
-          * *activity*
-          * *task_type*
-          * *season*
-          * *price*
-          * *tz*
-          * *extension*
+          *  *activity*
+          *  *task_type*
+          *  *season*
+          *  *price*
+          *  *specification*
+          *  *extension*
+          *  *start*
+          *  *end*
+          *  *time*
+          *  *full_time*
+          *  *deadline*
+          *  *planned_time*
+          *  *level*
   * **new_data** (по типу ключа) - данные на замену
   * **task_data** (*bool/dict*) - изменяемая задача, если *False* - значит предполагается, что *task* инициализирован. ``лучше не использовать``
   * **return** - (*True, 'ok'*) или (*False, коммент*)
