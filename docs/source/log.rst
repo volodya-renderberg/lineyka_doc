@@ -57,6 +57,9 @@ Class Log
 Методы
 ------
 
+Tasks logs
+~~~~~~~~~~
+
 .. py:function:: write_log(logs_keys[, artist_ob=False])
 
   запись лога активити задачи.
@@ -91,6 +94,52 @@ Class Log
   * **task_data** (*bool/dict*) - если *False* - значит читается *self.task* ``лучше не использовать``
   * **time_to_str** (*bool*) - если *True* - то преобразует дату в строку
   * **return** - (*True, ([список словарей логов, сотрирован по порядку], [список наименований веток])*) или (*False, comment*)
+  
+Artists logs
+~~~~~~~~~~~~
+
+.. py:function:: artist_start_log([artist_ob=False])
+
+  создание, при отсутствии, лога артиста по данной задаче, заполнение ``artist_log.start``
+  
+  .. rubric:: Параметры:
+  
+  * **artist_ob** (*bool/artist*) - если *False* - значит создаётся новый объект *artist* и определяется текущий пользователь.
+  * **return** - (*True, 'ok!'*) или (*False, comment*)
+  
+.. py:function:: artist_read_log([all=False, artist_ob=False])
+
+  чтение логов артиста.
+  
+  .. rubric:: Параметры:
+  
+  * **all** (*bool*) - если *True* - то все логи этого артиста, если *False* - То только по этой задаче.
+  * **artist_ob** (*bool/artist*) - если *False* - значит создаётся новый объект *artist* и определяется текущий пользователь.
+  * **return**:
+  *   * **all** = *True* - (*True*, [список логов - словари])
+  *   * **all** = *False* - (*True, {log}*)
+  *   * или (*False, coment*)
+  
+.. py:function:: artist_write_log(keys[, artist_ob=False])
+
+  внесение изменений в лог артиста по задаче (кроме параметров из *no_editable_keys*)
+  
+  .. rubric:: Параметры:
+  
+  * **keys** (*dict*) - словарь данных на замену по ключам *artists_logs_keys*
+  * **artist_ob** (*bool/artist*) - если *False* - значит создаётся новый объект *artist* и определяется текущий пользователь.
+  * **return** - (*True, 'ok!'*) или (*False, comment*)
+  
+.. py:function:: artist_add_full_time(time[, artist_ob=False])
+
+  добавление временик ``full_time``.
+  
+  * **time** (*float*) - время затраченное на *commit* (секунды)
+  * **artist_ob** (*bool/artist*) - если *False* - значит создаётся новый объект *artist* и определяется текущий пользователь.
+  * **return** - (*True, 'ok!'*) или (*False, comment*)
+
+Cameras logs
+~~~~~~~~~~~~
 
 .. py:function:: camera_write_log(artist_ob, comment, version[, task_data=False])
 
@@ -112,6 +161,9 @@ Class Log
 
   * **task_data** (*bool/dict*) - если *False* - значит читается *self.task* ``лучше не использовать``
   * **return** - (*True, [{camera_log}, ... ]*) (возвращаемый список сортирован по порядку) или (*False, comment*)
+  
+Playblasts logs
+~~~~~~~~~~~~~~~
 
 .. py:function:: playblast_write_log(artist_ob, comment, version[, task_data=False])
 
