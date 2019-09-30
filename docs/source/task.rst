@@ -311,6 +311,8 @@ Publish пути
 
   запись новой рабочей версии в ``work`` директорию.
   
+  .. note:: заполнение: ``task.open_time``, ``task.start``. Выполнение ``log.artist_start_log()`` (создание, при отсутствии, артист лога на эту задачу).
+  
   .. rubric:: Параметры:
   
   * **work_path** (*unicode*) - путь к текущему рабочему файлу
@@ -322,6 +324,8 @@ Publish пути
 .. py:function:: open_file([look=False, current_artist=False, tasks=False, input_task=False, open_path=False, version=False, launch=True])
 
   откроет файл в приложении - согласно расширению.
+  
+  .. note:: заполнение: ``task.time``, ``task.full_time``, ``artist_log.full_time``
   
   .. rubric:: Параметры:
 

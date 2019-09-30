@@ -18,8 +18,8 @@ task.log (project-level)
 * Добавить в :ref:`class-log-page` затраченое время - атрибут ``time``
     * запись при каждом коммите
     * при открытии задачи заполнять атрибут ``task.open_time``
-    * при комите записывать разницу в ``log.time`` и обновлять ``task.open_time`` временем коммита.
-    * после внесения записи в ``log.time`` суммирование в: ``task.time``, ``task.full_time``, ``artist_log.full_time``
+    * при комите записывать разницу в ``commit_log.time`` и обновлять ``task.open_time`` временем коммита.
+    * после внесения записи в ``commit_log.time`` суммирование в: ``task.time``, ``task.full_time``, ``artist_log.full_time``
 
 artist_log (studio-level)
 -------------------------
