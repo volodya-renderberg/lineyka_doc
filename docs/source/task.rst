@@ -231,7 +231,7 @@ Push пути
   * **current_artist** (*artist*) - текущий пользователь, если не передавать, будет сделано *get_user()*
   * **return**
       * для ``sketch`` - (*True*, ({словарь с ключами: ``source_path``, ``source_versions``, ``push_path``, ``look_path`` - значения словари по веткам}, *new_version*)
-      * для остальных (*True*, ((*source_path*, *new_path*), *new_version*))
+      * для остальных (*True*, (*source_path*, *source_version*, *new_path*, *new_version*))
       
 Publish пути
 ~~~~~~~~~~~~
