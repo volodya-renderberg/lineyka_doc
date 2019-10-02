@@ -68,7 +68,7 @@ Tasks logs
 
   .. rubric:: Параметры:
 
-  * **logs_keys** (*dict*) - словарь по *studio.logs_keys* - обязательные ключи: *comment, version, action*
+  * **logs_keys** (*dict*) - словарь по *studio.logs_keys* - обязательные ключи: *description, version, action*
   * **artist_ob** (*bool/artist*) - если *False* - значит создаётся новый объект *artist()* и определяется текущий пользователь
   * **return** - (*True, 'Ok!'*) или (*False, comment*)
 
