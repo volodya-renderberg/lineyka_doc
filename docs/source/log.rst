@@ -20,7 +20,7 @@ Class Log
     'artist': 'text',               # nik_name артиста, кто делает запись
     'description': 'text',          # коментарий
     'source': 'json',               # для push - версия коммита источника (в случае sketch - список версий по всем веткам, порядок совпадает с порядком записи веток в branch), для publish - версия push источника.
-    'branch' : 'text',              # ветка - в случае push, publish для sketch - список веток.
+    'branch' : 'text',              # ветка - в случае push, publish (для sketch - список веток).
     'time' : 'integer',             # время затраченное на commit, ед. измерения секунда.
     }
     
