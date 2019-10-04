@@ -81,6 +81,7 @@ Tasks logs
   .. rubric:: Параметры:
 
   * **action** (*bool / str / list*) если *False* - то возврат для всех *action*, если *list* - то будет использован оператор ``WHERE OR`` тоесть возврат по всем перечисленным экшенам.
+  * **branch** (*bool / str / unicode*) - фильтр по веткам, если *False* - то вернёт логи для всех веток.
   * **return** - (*True, ([список словарей логов, сотрирован по порядку], [список наименований веток])*) или (*False, comment*)
 
 .. py:function:: get_push_logs([task_data=False, time_to_str = False])
