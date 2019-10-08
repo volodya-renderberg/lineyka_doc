@@ -304,8 +304,8 @@ Publish пути
   *	**activity** (*str*) - активити
   * **return** - (*True, publish_file_path*) или  (*False, comment*)
   
-Операции commit/open/push/publish
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Операции commit/look/open/push/publish
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:function:: commit(work_path, description[, branch=False, artist_ob=False])
 
@@ -320,6 +320,31 @@ Publish пути
   * **branch** (*unicode*) - наименование ветки, если не передавать - то *master*
   * **artist_ob** (*artist*) - если не передовать, то будет выполнен *get_user()*
   * **return** (*True, path* - путь до сохранённого файла) или (*False, comment*)
+  
+.. py:function:: run_file(path[, viewer=False])
+
+  запуск файлов редактором или вьювером, создание *tmp* копии файла.
+  
+  .. rubric:: Параметры:
+  
+  * **path** (*str*) - путь до оригинального файла.
+  * **viewer** (*bool*):
+      * если *True* - открытие вьювером по оригинальному пути.
+      * если *False* - открытие редактором *tmp* копии файла.
+  * **return** (*True, path*) или (*False, comment*)
+  
+.. py:function:: look([action='push', version=False, launch=True])
+
+  просмотр какой-либо версии файла для менеджеров (*push, publish* версии)
+  
+  .. note:: если тип задачи из ``studio.multi_publish_task_types`` (например ``sketch``) то запуска не будет, но будут возвращены пути.
+  
+  .. rubric:: Параметры:
+  
+  * **action** (*str*) - экшен из *[push, publish]*
+  * **version** (*bool / str / int*) - версия, если *False* - то открывается последняя.
+  * **launch** (*bool*) - *False* - возвращает только путь, иначе запуск редактором по расширению (для не скетч).
+  * **return** (*True, path*) или (*False, comment*)
 
 .. py:function:: open_file([look=False, current_artist=False, tasks=False, input_task=False, open_path=False, version=False, launch=True])
 
