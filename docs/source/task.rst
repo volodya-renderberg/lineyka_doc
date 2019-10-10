@@ -243,7 +243,10 @@ Publish пути
   .. rubric:: Параметры
   
   * **version** (*int / str*) - номер *publish* версии
-  * **return** (*True, path* или *dict*(пути по веткам)) или (*False, comment*)
+  * **return** (*True, *r_data*) или (*False, comment*)
+  * структура **r_data**:
+      * для мультипаблиша - словарь с ключами ``look_path``, ``publish_path``, значения - словари путей по веткам.
+      * не для мультипаблиша - путь к файлу.
 
 .. py:function:: get_final_publish_file_path()
 
@@ -251,7 +254,10 @@ Publish пути
   
   .. rubric:: Параметры
   
-  * **return** (*True, path* или *dict*(пути по веткам)) или (*False, comment*)
+  * **return** (*True, (*r_data*, version)) или (*False, comment*)
+  * структура **r_data**:
+      * для мультипаблиша - словарь с ключами ``look_path``, ``publish_path``, значения - словари путей по веткам.
+      * не для мультипаблиша - путь к файлу.
 
 .. py:function:: get_new_publish_file_path()
 
@@ -259,10 +265,13 @@ Publish пути
   
   .. rubric:: Параметры
   
+  * **republish** (*bool*) - репаблиш или нет.
+  * **source_log** (*bool / dict*) - лог источника для паблиша (*push* или *publish*), при наличие этого лога версия *source_version* передавать не имеет смысла.
+  * **source_version** (*bool / str*) - версия исходника (*push* или *publish*) если *False* - последняя версия.
   * **return**: (*true, (dict_path, version*)) или (*False, comment*)
   * структура **dict_path**:
-      * ключи - ``top_path``, ``version_path``,
-      * значения - пути или словари путей по веткам.
+      * ключи - ``top_path``, ``top_look_path``, ``version_path``, ``version_look_path``, ``source_path``, ``source_look_path``
+      * значения - пути или словари путей по веткам (для мультипаблиша).
 
 Пути (old)
 ~~~~~~~~~~
