@@ -236,13 +236,15 @@ Push пути
 Publish пути
 ~~~~~~~~~~~~
 
-.. py:function:: get_version_publish_file_path(version)
+.. py:function:: get_version_publish_file_path([version=False, branches=False, version_log=False])
 
   пути до файлов указанной *publish* версии.
   
   .. rubric:: Параметры
   
   * **version** (*int / str*) - номер *publish* версии
+  * **branches** (*bool / list*) - список веток данного паблиша, для мультипаблиша.
+  * **version_log** (*bool / dict*) - словарь лога данной версии, если его передавать, то *branches* и *version* не имеют смысла.
   * **return** (*True, *r_data*) или (*False, comment*)
   * структура **r_data**:
       * для мультипаблиша - словарь с ключами ``look_path``, ``publish_path``, значения - словари путей по веткам.
@@ -259,7 +261,7 @@ Publish пути
       * для мультипаблиша - словарь с ключами ``look_path``, ``publish_path``, значения - словари путей по веткам.
       * не для мультипаблиша - путь к файлу.
 
-.. py:function:: get_new_publish_file_path()
+.. py:function:: get_new_publish_file_path([republish=False, source_log=False, source_version=False])
 
   пути до файлов новой *publish* версии (и *top*, и версию)
   
