@@ -270,10 +270,20 @@ Publish пути
   * **republish** (*bool*) - репаблиш или нет.
   * **source_log** (*bool / dict*) - лог источника для паблиша (*push* или *publish*), при наличие этого лога версия *source_version* передавать не имеет смысла.
   * **source_version** (*bool / str*) - версия исходника (*push* или *publish*) если *False* - последняя версия.
-  * **return**: (*true, (dict_path, version*)) или (*False, comment*)
-  * структура **dict_path**:
-      * ключи - ``top_path``, ``top_look_path``, ``version_path``, ``version_look_path``, ``source_path``, ``source_look_path``
-      * значения - пути или словари путей по веткам (для мультипаблиша).
+  * **return**:
+      * для мультипаблиш (*true, (dict_path, version, source, branches*)) или (*False, comment*):
+          * структура **dict_path**:
+              * ключи - ``top_path``, ``top_look_path``, ``version_path``, ``version_look_path``, ``source_path``, ``source_look_path``
+              * значения - пути или словари путей по веткам.
+          * **version** - новая версия
+          * **source** - версия (*push* или *publish*) от куда делается паблиш.
+          * **branches** - ветки которые паблишатся.
+      * для не мультипаблиша (*true, (dict_path, version, source*)) или (*False, comment*):
+          * структура **dict_path**:
+              * ключи - ``top_path``, ``version_path``, ``source_path``
+              * значения - пути.
+          * **version** - новая версия.
+          * **source** - версия (*push* или *publish*) от куда делается паблиш.
 
 Пути (old)
 ~~~~~~~~~~
