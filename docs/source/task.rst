@@ -406,6 +406,18 @@ Publish пути
   * **current_artist** (*artist*) - если не передавать, то будет выполняться *get_user()* - лишнее обращение к БД
   * **return** (*True, new_file_path*) или (*False, comment*)
   
+.. py:function:: publish_task([description=False, republish=False, source_version=False, source_log=False, current_artist=False])
+
+  перекладывание паблиш версии файлов (в том числе top версии), запись лога.
+  
+  .. rubric:: Параметры:
+  
+  * **description** (*str*) - не обязательный параметр, при отсутствии составляется автоматически - техническое описание: что, откуда, куда.
+  * **source_version** (*int, str*) - версия *push* или *publish* (при репаблише), если *False* при паблише - то паблиш из последней пуш версии.
+  * **source_log** (*bool / dict*) - лог версии источника, при его наличии *source_version* не имеет смысла.
+  * **current_artist** (*artist*) - если не передавать, то будет выполняться *get_user()* - лишнее обращение к БД.
+  * **return** (*True, comment*) или (*False, comment*)
+  
 Кеш
 ~~~
 
