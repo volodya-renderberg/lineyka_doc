@@ -40,7 +40,7 @@ Specifications:
    specifications/input_output
    specifications/task
    specifications/chat
-   specifications/set
+   specifications/new_types_of_assets
    specifications/server
 
 Indices and tables
