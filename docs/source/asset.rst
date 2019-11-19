@@ -15,6 +15,7 @@ Class Asset
   'name': 'text',
   'group': 'text',
   'type': 'text',
+  'loading_type': 'text',
   'season': 'text', # ``?``
   'priority': 'integer',
   'description': 'text',
@@ -44,6 +45,8 @@ Class Asset
 :group: (*str*) - *id* группы
 
 :type: (*str*) - тип ассета из *studio.asset_types*
+
+:loading_type: (*str*) - тип загрузки в анимационную сцену, варианты: **mesh** - загрузка меша из активити ``model``, **group** - загрузка группы из активити ``model``, **rig** - загрузка группы рига из активити ``rig``
 
 :season: (*str*) - *id* сезона ``?``
 
