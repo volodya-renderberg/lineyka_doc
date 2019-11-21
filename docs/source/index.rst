@@ -25,6 +25,7 @@ Contents:
    chat
    list_of_assets
    examples
+   specifications
    
 Specifications:
 
