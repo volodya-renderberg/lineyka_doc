@@ -15,7 +15,7 @@ Class Asset
   'name': 'text',
   'group': 'text',
   'type': 'text',
-  'loading_type': 'text',
+  'loading_type': 'text', # способ загрузки ассета object в анимационную сцену, значения из studio.loading_types
   'season': 'text', # ``?``
   'priority': 'integer',
   'description': 'text',

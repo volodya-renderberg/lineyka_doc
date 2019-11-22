@@ -16,6 +16,7 @@ Class Set_of_tasks
   set_of_tasks_keys = {
   'name':'text',
   'asset_type': 'text',
+  'loading_type': 'text',
   'sets':'json',
   'edit_time': 'timestamp',
   }
@@ -42,6 +43,8 @@ Class Set_of_tasks
 
 :asset_type: (*str*) - тип ассета из *studio.asset_types*
 
+:loading_type: (*str*) - # способ загрузки ассета для типа ***object***, значения из *studio.loading_types*
+
 :sets: (*list*) - сами задачи, список словарей с ключами по *sets_keys* (ключи соответсвую атрибутам класса Task).
 
 :edit_time: (*timestamp*) - дата и время последних изменений.
@@ -59,7 +62,7 @@ Class Set_of_tasks
   * **new** (*bool*) - если *True* - то возврат нового объекта, если *False* - то инициализация текущего
   * **return** - new_ob или (*True, 'Ok!'*)
 
-.. py:function:: create(name, asset_type[, keys = False, force=False])
+.. py:function:: create(name, asset_type[, loading_type=False, keys = False, force=False])
 
   создание набора задач.
   
@@ -67,6 +70,7 @@ Class Set_of_tasks
   
   * **name** (*str*) - имя набора
   * **asset_type** (*str*) - должен быть из *studio.asset_types*
+  * **loading_type** (*str*) - тип загрузки для *object* ассета, из *studio.loading_types*
   * **keys** (*list/ bool*) - список задач(словари по *sets_keys*), если *False* - будет создан пустой набор
   * **force** (*bool*) - если *False* - то будет давать ошибку при совпадении имени, если *True* - то будет принудительно перименовывать с подбором номера
   * **return** - (*True, new_ob*) или (*False, comment*)
@@ -139,10 +143,21 @@ Class Set_of_tasks
   * **asset_type** (*str*) - новый тип, должен быть из *studio.asset_types*
   * **name** (*str/bool*) - имя изменяемого сета, если *False* - то редактируется текущий объект
   * **return** - (*True, 'ok'*) или (*False, comment*)
+  
+.. py:function:: edit_loading_type(loading_type)
+
+  редактирование параметра ``loading_type``.
+  
+  .. important:: только для ассетов типа :"object":
+
+  **Параметры:**
+  
+  * **loading_type** (*str*) - значение из *studio.loading_types*
+  * **return** - (*True, 'ok'*) или (*False, comment*)
 
 .. py:function:: edit_sets(data[, name=False])
 
-  редактирование значения sets
+  редактирование значения ``sets``
 
   **Параметры:**
   
