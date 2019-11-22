@@ -148,7 +148,7 @@ Class Set_of_tasks
 
   редактирование параметра ``loading_type``.
   
-  .. important:: только для ассетов типа :"object":
+  .. important:: только для ассетов типа ::"object"::
 
   **Параметры:**
   
