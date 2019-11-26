@@ -19,8 +19,8 @@ Object
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * ``loading_type`` в **asset_keys** ``+``
-* Редактирование ``loading_type`` в **Group Content Editor**
-* Редактирование ``loading_type`` в **таск манагере**
+* Редактирование ``loading_type`` в **Group Content Editor** ``+``
+* Редактирование ``loading_type`` в **таск манагере** ``+``
 * Указание типа загрузки ассета в **сет оф таскс**, поле ``loading_type`` в **set_of_tasks_keys**. ``+``
 * Упрощение операции **change_group**
 * Упрощение операции **copy_asset**
