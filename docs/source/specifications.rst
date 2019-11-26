@@ -17,3 +17,4 @@ Contents:
    specifications/chat
    specifications/new_types_of_assets
    specifications/server
+   specifications/help_links
