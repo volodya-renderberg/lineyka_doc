@@ -188,3 +188,12 @@ Class Asset
 
   * **description** (*str*) - новое описание
   * **return** -  (*True, 'Ok!'*) или (*False, comment*)
+  
+.. py:function:: change_loading_type(loading_type)
+
+  Смена типа загрузки ассета, для типа **object** (ассет должен быть инициализирован).
+
+  .. rubric:: Параметры:
+
+  * **loading_type** (*str*) - тип загрузки, значение из *studio.loading_types*
+  * **return** -  (*True, 'Ok!'*) или (*False, comment*)
