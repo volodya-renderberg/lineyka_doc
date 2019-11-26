@@ -397,6 +397,8 @@ Publish пути
   
 .. py:function:: push_file(description, current_file[, current_artist=False])
 
+  .. danger:: Устарело!
+
   запись новой рабочей версии файла, сохранение версии + запись *push* лога.
   
   .. rubric:: Параметры:
