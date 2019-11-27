@@ -290,6 +290,8 @@ Publish пути
 
 .. py:function:: get_final_file_path([task_data=False])
 
+  .. danger:: Устарело!
+  
   получение пути к последней версии файла задачи.
   
   .. rubric:: Параметры:
@@ -299,6 +301,8 @@ Publish пути
 
 .. py:function:: get_version_file_path(version[, task_data=False])
 
+  .. danger:: Устарело!
+  
   получение пути к файлу задачи по указанной версии.
   
   .. rubric:: Параметры:
@@ -309,6 +313,8 @@ Publish пути
 
 .. py:function:: get_new_file_path([task_data=False])
 
+  .. danger:: Устарело!
+  
   получение пути к файлу задачи для новой версии
   
   .. rubric:: Параметры:
@@ -318,6 +324,8 @@ Publish пути
 
 .. py:function:: get_publish_file_path(activity)
 
+  .. danger:: Устарело!
+  
   получение пути к паблиш версии файла активити.
   
   .. rubric:: Параметры:

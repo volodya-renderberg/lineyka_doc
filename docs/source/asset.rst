@@ -102,7 +102,7 @@ Class Asset
   * **asset_type** (*str*) - тип для всех ассетов из *studio.asset_types*
   * **list_keys** (*list*) - список словарей по ключам *asset_keys* обязательные параметры в *keys* (*list_keys*): *name*, *group(id)*.  важный параметр *set_of_tasks* - имя набора задач
   * **return** - (*True, assets_data*) или (*False, comment*)
-      * **assets_data** (*dict*) - словарь создаваемых асетов по именам, ``данные тоже словари ?? - Должны быть экземпляры``.
+      * **assets_data** (*dict*) - словарь создаваемых асетов(экземпляры) по именам.
 
 .. py:function:: remove()
 
@@ -112,9 +112,9 @@ Class Asset
 
   * **return** -  (*True, 'Ok!'*) или (*False, comment*).
 
-.. py:function:: copy_of_asset(new_group_name, new_asset_name, new_asset_type, set_of_tasks, data_of_source_asset=False)
+.. py:function:: copy_of_asset(new_group_name, new_asset_name, new_asset_type, set_of_tasks)
 
-  копирование ассета, можно с изменением типа *char* на *obj* и обратно.
+  копирование текущего ассета.
 
   .. rubric:: Параметры:
 
@@ -123,7 +123,6 @@ Class Asset
   * **new_asset_name** (*str*) - имя создаваемого ассета
   * **new_asset_type** (*str*) из *studio.asset_types* - тип создаваемого ассета
   * **set_of_tasks** (*str*) - имя набора задач
-  * **data_of_source_asset** (*dict*) - дата копируемого ассета, если *False* - то копируется инициализированный ассет
   * **return** -  (*True, 'Ok!'*) или (*False, comment*)
 
 .. py:function:: get_list_by_type(asset_type= False)
