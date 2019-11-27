@@ -118,7 +118,6 @@ Class Asset
 
   .. rubric:: Параметры:
 
-  * **self.project** должен быть инициализирован
   * **new_group_name** (*str*) - имя группы для создаваемого ассета
   * **new_asset_name** (*str*) - имя создаваемого ассета
   * **new_asset_type** (*str*) из *studio.asset_types* - тип создаваемого ассета
