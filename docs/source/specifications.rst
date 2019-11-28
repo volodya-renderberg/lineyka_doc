@@ -18,3 +18,4 @@ Contents:
    specifications/new_types_of_assets
    specifications/server
    specifications/help_links
+   specifications/hooks
