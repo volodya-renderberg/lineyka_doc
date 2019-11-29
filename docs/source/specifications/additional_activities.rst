@@ -5,7 +5,7 @@ Additional Activities
 
 	Доп активити на проект.
 
-	..rubric:: дополнения в api.
+	.. rubric:: дополнения в api.
 
 	* **project** - новый атрибут *additional_activities*
 		* Словарь по типу *asset.ACTIVITY_FOLDER*
@@ -15,7 +15,7 @@ Additional Activities
 	* Убрать псевдонимы
 	* Возможно добавить описание активити (вместо псевдонима)
 
-	..rubric:: дополнения в gui
+	.. rubric:: дополнения в gui
 
 	* Добавляются по типам ассетов:
 	* Появляются в списке предлагаемых активити *set_of_tasks manager*
