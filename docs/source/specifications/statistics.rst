@@ -1,7 +1,7 @@
 .. _statistics-page:
 
-Statistics specification
-========================
+Statistics
+==========
 
 Артист:
 -------

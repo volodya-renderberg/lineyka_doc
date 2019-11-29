@@ -1,7 +1,7 @@
 .. _input-output-page:
 
-Input Output specification
-==========================
+Input Output
+============
 
 * Все операции по взаимосвязям переместить в *task_manager*.
 * Скрыть все действия с сервисными задачами.

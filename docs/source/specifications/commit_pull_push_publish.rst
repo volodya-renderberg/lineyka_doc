@@ -1,7 +1,7 @@
 .. _commit-push-publish-page:
 
-Commit Pull Push Publish specification
-======================================
+Commit Pull Push Publish
+========================
 
 Общее
 -----

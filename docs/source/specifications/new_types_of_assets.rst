@@ -1,7 +1,7 @@
 .. _new_types_of_assets-page:
 
-New Types of Assets specification
-=================================
+New Types of Assets
+===================
 
 Object
 ------

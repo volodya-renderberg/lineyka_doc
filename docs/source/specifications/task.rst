@@ -1,7 +1,7 @@
 .. _task-specification-page:
 
-Task specification
-==================
+Task
+====
 
 New Attributes
 **************

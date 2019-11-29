@@ -1,7 +1,7 @@
 .. _server-page:
 
-Server specification
-====================
+Server
+======
 
 * регистрация, авторизация пользователей
 * *python api*

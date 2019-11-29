@@ -1,7 +1,7 @@
 .. time-log-page:
 
-Time Log specification
-======================
+Time Logs
+=========
 
 Атрибуты в task:
 ----------------

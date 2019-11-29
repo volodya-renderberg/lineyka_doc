@@ -1,7 +1,7 @@
 .. _season-series-shot-page:
 
-Season Episode Sequence Shot specification
-==========================================
+Season Episode Sequence Shot
+============================
 
 Season
 ------
