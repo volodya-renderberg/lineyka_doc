@@ -5,12 +5,15 @@ Class Log
 
 **log(studio)**
 
-**level** = 'project'
+**level** = 'studio'/'project'
 
 Данные хранимые в БД (имя столбца : тип данных):
 
 .. code-block:: python
 
+  # level: project
+  # file_name: .tasks_logs.db
+  # table_name: [asset id]:[activity name]:logs
   logs_keys = {
     'version': 'text',              # hex 4 символа
     'date_time': 'timestamp',       # время и дата записи
@@ -23,7 +26,10 @@ Class Log
     'branch' : 'text',              # ветка - в случае push, publish (для sketch - список веток).
     'time' : 'integer',             # время затраченное на commit, ед. измерения секунда.
     }
-    
+  
+  # level: studio
+  # file_name: .artists_logs.db
+  # table_name: [nik name]_tasks_logs
   artists_logs_keys = {
     'project_name': 'text',
     'task_name': 'text',
