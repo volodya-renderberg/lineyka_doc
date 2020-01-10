@@ -10,6 +10,7 @@ Contents:
    specifications/commit_pull_push_publish
    specifications/time_log
    specifications/statistics
+   specifications/time_zone
    specifications/input_output
    specifications/task
    specifications/chat
